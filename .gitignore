@@ -1,0 +1,25 @@
+# OS metadata
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Local development
+node_modules/
+
+# Build artifacts / packaging
+*.zip
+*.tar.gz
+
+# Logs
+*.log
+npm-debug.log*
+
+# Local env (in case anyone adds env vars later)
+.env
+.env.local
