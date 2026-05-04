@@ -35,6 +35,49 @@ if (year) year.textContent = new Date().getFullYear();
 })();
 
 // ══════════════════════════════════════════════
+// Floor plan modal — open from any [data-floorplan] button
+// ══════════════════════════════════════════════
+(function setupFloorplanModal() {
+  const modal = document.getElementById('floorplanModal');
+  if (!modal) return;
+  const img = document.getElementById('floorplanImage');
+  const title = document.getElementById('floorplanTitle');
+  let lastFocus = null;
+
+  function open(planSlug, unitName, triggerEl) {
+    img.src = `assets/img/floorplans/${planSlug}.jpg`;
+    img.alt = `${unitName} floor plan`;
+    title.textContent = unitName;
+    lastFocus = triggerEl || document.activeElement;
+    modal.hidden = false;
+    document.body.style.overflow = 'hidden';
+    const closeBtn = modal.querySelector('.floorplan-modal__close');
+    if (closeBtn) closeBtn.focus();
+    if (window.gtag) gtag('event', 'view_floorplan', { plan: planSlug, unit: unitName });
+  }
+  function close() {
+    modal.hidden = true;
+    document.body.style.overflow = '';
+    if (lastFocus) lastFocus.focus();
+  }
+
+  document.addEventListener('click', (e) => {
+    const trigger = e.target.closest('[data-floorplan]');
+    if (trigger) {
+      e.preventDefault();
+      open(trigger.dataset.floorplan, trigger.dataset.unitName || 'Floor plan', trigger);
+      return;
+    }
+    if (e.target.closest('[data-close]') && e.target.closest('.floorplan-modal')) {
+      close();
+    }
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !modal.hidden) close();
+  });
+})();
+
+// ══════════════════════════════════════════════
 // iOS detection — rewrite Contact Us hrefs to sms: (iMessage)
 // Android/desktop keep wa.me/ for WhatsApp.
 // SMS body deeplink format on iOS: sms:NUMBER&body=TEXT
@@ -150,6 +193,7 @@ const I18N_ES = {
   "Floor plans": "Planos",
   "Pricing": "Precios",
   "Amenities": "Amenidades",
+  "Community": "Comunidad",
   "Location": "Ubicación",
   "Switch to Spanish": "Cambiar a español",
   "Switch to English": "Cambiar a inglés",
@@ -273,12 +317,35 @@ const I18N_ES = {
 
   // Amenities
   "Amenities.": "Amenidades.",
+  "Designed for everyday comfort and weekend living.": "Diseñadas para la comodidad diaria y la vida de fin de semana.",
   "Resort-style pool": "Piscina estilo resort",
-  "24/7 fitness": "Gym 24/7",
+  "Heated saltwater pool with sundeck and cabanas.": "Piscina de agua salada climatizada con solárium y cabañas.",
+  "24/7 fitness center": "Gimnasio 24/7",
+  "Cardio, free weights, and strength machines — open around the clock.": "Cardio, pesas libres y máquinas de fuerza — abierto las 24 horas.",
   "Co-working lounge": "Lounge de coworking",
-  "Modern exteriors": "Exteriores modernos",
-  "Lit at night": "Iluminado de noche",
-  "Dog park": "Parque para perros",
+  "Quiet study nooks and shared workstations with high-speed Wi-Fi.": "Rincones tranquilos de estudio y estaciones de trabajo compartidas con Wi-Fi de alta velocidad.",
+  "Outdoor lounge": "Lounge al aire libre",
+  "Grilling stations, fire pit, and shaded seating for evenings outside.": "Parrillas, fogata y asientos a la sombra para noches al aire libre.",
+  "On-site dog park and pet-wash station. Up to 2 pets per home.": "Parque para perros y estación de lavado en el sitio. Hasta 2 mascotas por hogar.",
+  "On-site parking": "Estacionamiento en el sitio",
+  "Open parking included. Covered and EV charging spots available.": "Estacionamiento abierto incluido. Hay puestos cubiertos y carga eléctrica disponibles.",
+  "Photos coming soon — community is brand new.": "Fotos disponibles próximamente — la comunidad es recién estrenada.",
+
+  // Community / site plan
+  "The community.": "La comunidad.",
+  "Three residential blocks, central courtyard, and on-site amenities — all within a gated, landscaped community.": "Tres bloques residenciales, patio central y amenidades en el sitio — todo dentro de una comunidad cerrada y arbolada.",
+  "Site plan · Phase II": "Plano del sitio · Fase II",
+  "Casa Princeton site plan — Phase II layout showing residential blocks, courtyard, parking, and amenities": "Plano de Casa Princeton — Fase II mostrando bloques residenciales, patio, estacionamiento y amenidades",
+
+  // Floor plan modal
+  "Floor plan": "Plano",
+  "Renderings — actual finishes and dimensions may vary.": "Renderizaciones — los acabados y dimensiones reales pueden variar.",
+  "Close floor plan": "Cerrar plano",
+  "The Cypress — 1 BR floor plan": "Plano de The Cypress — 1 DOR",
+  "The Magnolia — 2 BR floor plan": "Plano de The Magnolia — 2 DOR",
+  "The Royal Palm — 2 BR Townhome floor plan": "Plano de The Royal Palm — Townhome 2 DOR",
+  "The Coral Reef — 3 BR floor plan": "Plano de The Coral Reef — 3 DOR",
+  "Casa Princeton": "Casa Princeton",
 
   // Location
   "Minutes from US-1, Cutler Bay & the Florida Keys.": "A minutos de US-1, Cutler Bay y los Cayos de Florida.",

@@ -100,13 +100,13 @@
 <!-- TODO[CLIENT]: Confirm contact number is +1 786-977-3672 for WhatsApp (Android/desktop) and SMS/iMessage (iOS) -->
 <header class="landing-header" id="top">
   <a href="#hero" class="landing-header__logo" aria-label="Casa Princeton — top of page">
-    <span class="landing-header__mark">CP</span>
-    <span class="landing-header__name"><strong>Casa Princeton</strong><small>Princeton · FL</small></span>
+    <img src="assets/img/logo-casa-princeton.png" alt="Casa Princeton" class="landing-header__logo-img" />
   </a>
   <nav class="landing-header__nav" aria-label="Page sections">
     <a href="#units">Floor plans</a>
     <a href="#fees">Pricing</a>
     <a href="#amenities">Amenities</a>
+    <a href="#community">Community</a>
     <a href="#location">Location</a>
   </nav>
   <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch to Spanish">ES</button>
@@ -121,16 +121,7 @@
 <!-- ════════ 1. Hero ════════ -->
 <section class="hero-landing" id="hero">
   <div class="hero__media" aria-hidden="true">
-    <!-- TODO[PHOTOS]: Drop hero photo at assets/img/hero.jpg (1920x1080+) and uncomment below.
-    <picture>
-      <source srcset="assets/img/hero.webp" type="image/webp">
-      <img src="assets/img/hero.jpg" alt="" loading="eager" fetchpriority="high">
-    </picture>
-    -->
-    <div class="hero__sky"></div>
-    <div class="hero__palms"></div>
-    <div class="hero__building"></div>
-    <div class="hero__pool"></div>
+    <img src="assets/img/hero.jpg" alt="" class="hero__photo" loading="eager" fetchpriority="high" />
   </div>
   <div class="hero__overlay"></div>
   <div class="hero-landing__content">
@@ -187,7 +178,7 @@
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413"/></svg>
           Contact Us
         </a>
-        <a href="#" class="unit-row__plan-link" aria-label="See Cypress floor plan">See floor plan</a>
+        <button type="button" class="unit-row__plan-link" data-floorplan="cypress-1br" data-unit-name="The Cypress — 1 BR" aria-label="See Cypress floor plan">See floor plan</button>
       </li>
 
       <li class="unit-row unit-row--featured">
@@ -200,7 +191,7 @@
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413"/></svg>
           Contact Us
         </a>
-        <a href="#" class="unit-row__plan-link" aria-label="See Magnolia floor plan">See floor plan</a>
+        <button type="button" class="unit-row__plan-link" data-floorplan="magnolia-2br" data-unit-name="The Magnolia — 2 BR" aria-label="See Magnolia floor plan">See floor plan</button>
       </li>
 
       <li class="unit-row">
@@ -212,7 +203,7 @@
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413"/></svg>
           Contact Us
         </a>
-        <a href="#" class="unit-row__plan-link" aria-label="See Royal Palm floor plan">See floor plan</a>
+        <button type="button" class="unit-row__plan-link" data-floorplan="royal-palm-2br" data-unit-name="The Royal Palm — 2 BR Townhome" aria-label="See Royal Palm floor plan">See floor plan</button>
       </li>
 
       <li class="unit-row">
@@ -224,7 +215,7 @@
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413"/></svg>
           Contact Us
         </a>
-        <a href="#" class="unit-row__plan-link" aria-label="See Coral Reef floor plan">See floor plan</a>
+        <button type="button" class="unit-row__plan-link" data-floorplan="coral-reef-3br" data-unit-name="The Coral Reef — 3 BR" aria-label="See Coral Reef floor plan">See floor plan</button>
       </li>
 
     </ul>
@@ -341,50 +332,97 @@
   </div>
 </section>
 
-<!-- ════════ 4. Amenities photo grid ════════ -->
+<!-- ════════ 4. Amenities — icon cards ════════ -->
 <section class="amenities-landing" id="amenities">
   <div class="amenities-landing__inner">
     <h2>Amenities.</h2>
-    <!-- TODO[PHOTOS]: Drop the 6 photos at assets/img/gallery/{pool,gym,lounge,exterior-day,exterior-night,dog-park}.jpg
-         then uncomment each <picture> block. CSS auto-hides the gradient placeholder when an <img> is present. -->
-    <div class="amenities-grid-6">
-      <figure>
-        <div class="gallery__placeholder" data-art="pool">
-          <!-- <picture><source srcset="assets/img/gallery/pool.webp" type="image/webp"><img src="assets/img/gallery/pool.jpg" alt="Resort-style pool at Casa Princeton" loading="lazy"></picture> -->
-        </div>
-        <figcaption>Resort-style pool</figcaption>
-      </figure>
-      <figure>
-        <div class="gallery__placeholder" data-art="gym">
-          <!-- <picture><source srcset="assets/img/gallery/gym.webp" type="image/webp"><img src="assets/img/gallery/gym.jpg" alt="24/7 fitness center at Casa Princeton" loading="lazy"></picture> -->
-        </div>
-        <figcaption>24/7 fitness</figcaption>
-      </figure>
-      <figure>
-        <div class="gallery__placeholder" data-art="lounge">
-          <!-- <picture><source srcset="assets/img/gallery/lounge.webp" type="image/webp"><img src="assets/img/gallery/lounge.jpg" alt="Co-working lounge at Casa Princeton" loading="lazy"></picture> -->
-        </div>
-        <figcaption>Co-working lounge</figcaption>
-      </figure>
-      <figure>
-        <div class="gallery__placeholder" data-art="exterior">
-          <!-- <picture><source srcset="assets/img/gallery/exterior-day.webp" type="image/webp"><img src="assets/img/gallery/exterior-day.jpg" alt="Casa Princeton exterior, daytime" loading="lazy"></picture> -->
-        </div>
-        <figcaption>Modern exteriors</figcaption>
-      </figure>
-      <figure>
-        <div class="gallery__placeholder" data-art="lounge">
-          <!-- <picture><source srcset="assets/img/gallery/exterior-night.webp" type="image/webp"><img src="assets/img/gallery/exterior-night.jpg" alt="Casa Princeton at night" loading="lazy"></picture> -->
-        </div>
-        <figcaption>Lit at night</figcaption>
-      </figure>
-      <figure>
-        <div class="gallery__placeholder" data-art="exterior">
-          <!-- <picture><source srcset="assets/img/gallery/dog-park.webp" type="image/webp"><img src="assets/img/gallery/dog-park.jpg" alt="On-site dog park at Casa Princeton" loading="lazy"></picture> -->
-        </div>
-        <figcaption>Dog park</figcaption>
-      </figure>
-    </div>
+    <p class="amenities-landing__sub">Designed for everyday comfort and weekend living.</p>
+    <ul class="amenity-cards">
+      <li class="amenity-card">
+        <span class="amenity-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 22c2 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2 2-2 4-2 2 2 4 2"/>
+            <path d="M3 27c2 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2 2-2 4-2 2 2 4 2"/>
+            <path d="M9 18V8a3 3 0 016 0"/>
+            <path d="M22 18V8a3 3 0 016 0"/>
+          </svg>
+        </span>
+        <h3>Resort-style pool</h3>
+        <p>Heated saltwater pool with sundeck and cabanas.</p>
+      </li>
+      <li class="amenity-card">
+        <span class="amenity-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="13" width="3" height="6" rx="1"/>
+            <rect x="26" y="13" width="3" height="6" rx="1"/>
+            <rect x="6" y="14.5" width="3" height="3"/>
+            <rect x="23" y="14.5" width="3" height="3"/>
+            <rect x="9" y="11" width="14" height="10" rx="1.5"/>
+          </svg>
+        </span>
+        <h3>24/7 fitness center</h3>
+        <p>Cardio, free weights, and strength machines — open around the clock.</p>
+      </li>
+      <li class="amenity-card">
+        <span class="amenity-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="4" y="6" width="24" height="16" rx="2"/>
+            <path d="M4 12h24"/>
+            <path d="M10 22v4M22 22v4M8 26h16"/>
+          </svg>
+        </span>
+        <h3>Co-working lounge</h3>
+        <p>Quiet study nooks and shared workstations with high-speed Wi-Fi.</p>
+      </li>
+      <li class="amenity-card">
+        <span class="amenity-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="16" cy="16" r="6"/>
+            <path d="M16 4v3M16 25v3M4 16h3M25 16h3M7.5 7.5l2 2M22.5 22.5l2 2M22.5 7.5l-2 2M9.5 22.5l-2 2"/>
+          </svg>
+        </span>
+        <h3>Outdoor lounge</h3>
+        <p>Grilling stations, fire pit, and shaded seating for evenings outside.</p>
+      </li>
+      <li class="amenity-card">
+        <span class="amenity-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="13" r="3"/>
+            <path d="M16 22c2-3 6-3 7 0v3H8v-3c1-3 5-3 7 0"/>
+            <circle cx="22" cy="11" r="2"/>
+            <path d="M21 14c-1 1-1 2-1 3"/>
+          </svg>
+        </span>
+        <h3>Pet-friendly community</h3>
+        <p>On-site dog park and pet-wash station. Up to 2 pets per home.</p>
+      </li>
+      <li class="amenity-card">
+        <span class="amenity-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="6" y="14" width="20" height="8" rx="1.5"/>
+            <path d="M9 14l1.5-4h11L23 14"/>
+            <circle cx="11" cy="22" r="2" fill="currentColor"/>
+            <circle cx="21" cy="22" r="2" fill="currentColor"/>
+            <path d="M28 18h-2M6 18H4"/>
+          </svg>
+        </span>
+        <h3>On-site parking</h3>
+        <p>Open parking included. Covered and EV charging spots available.</p>
+      </li>
+    </ul>
+    <p class="amenities-landing__note">Photos coming soon — community is brand new.</p>
+  </div>
+</section>
+
+<!-- ════════ 4.5. The community (site plan) ════════ -->
+<section class="community-section" id="community">
+  <div class="community-section__inner">
+    <h2>The community.</h2>
+    <p class="community-section__sub">Three residential blocks, central courtyard, and on-site amenities — all within a gated, landscaped community.</p>
+    <figure class="community-section__figure">
+      <img src="assets/img/site-plan.jpg" alt="Casa Princeton site plan — Phase II layout showing residential blocks, courtyard, parking, and amenities" loading="lazy" />
+      <figcaption>Site plan · Phase II</figcaption>
+    </figure>
   </div>
 </section>
 
@@ -484,6 +522,17 @@
 <a href="https://wa.me/17869773672?text=Hi%2C%20I%27m%20interested%20in%20Casa%20Princeton" class="fab-whatsapp" aria-label="Contact Us" target="_blank" rel="noopener" data-wa-source="fab">
   <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413"/></svg>
 </a>
+
+<!-- ════════ Floor plan modal (shared) ════════ -->
+<div class="floorplan-modal" id="floorplanModal" role="dialog" aria-modal="true" aria-labelledby="floorplanTitle" hidden>
+  <div class="floorplan-modal__backdrop" data-close></div>
+  <div class="floorplan-modal__panel">
+    <button type="button" class="floorplan-modal__close" data-close aria-label="Close floor plan">×</button>
+    <h3 id="floorplanTitle" class="floorplan-modal__title">Floor plan</h3>
+    <img id="floorplanImage" src="" alt="" />
+    <p class="floorplan-modal__note">Renderings — actual finishes and dimensions may vary.</p>
+  </div>
+</div>
 
 <script src="script.js"></script>
 </body>
