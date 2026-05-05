@@ -182,8 +182,9 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 // ══════════════════════════════════════════════
 const I18N_ES = {
   // Concession banner
-  "First month free": "Primer mes gratis",
-  "on 12-month leases.": "en contratos de 12 meses.",
+  "Limited-time move-in offer": "Oferta de mudanza por tiempo limitado",
+  "— ask us about current bundles.": "— consúltanos sobre los paquetes actuales.",
+  "Ask us about current move-in offers.": "Consúltanos sobre ofertas actuales de mudanza.",
   "Close offer banner": "Cerrar banner de oferta",
 
   // Header
