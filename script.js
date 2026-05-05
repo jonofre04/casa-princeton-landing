@@ -78,45 +78,22 @@ if (year) year.textContent = new Date().getFullYear();
 })();
 
 // ══════════════════════════════════════════════
-// iOS detection — rewrite Contact Us hrefs to sms: (iMessage)
-// Android/desktop keep wa.me/ for WhatsApp.
-// SMS body deeplink format on iOS: sms:NUMBER&body=TEXT
-// ══════════════════════════════════════════════
-(function setupContactMedium() {
-  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-  const PHONE = '+17869773672';
-  if (!isIOS) return;
-  document.querySelectorAll('a[data-wa-source]').forEach(a => {
-    let text = "Hi, I'm interested in Casa Princeton";
-    try {
-      const url = new URL(a.href);
-      text = url.searchParams.get('text') || text;
-    } catch (_) {}
-    a.href = `sms:${PHONE}&body=${encodeURIComponent(text)}`;
-    a.target = '_self';
-    a.removeAttribute('rel');
-  });
-})();
-
-// ══════════════════════════════════════════════
 // Contact CTA tracking (GA4 + Meta Pixel)
-// Reports the medium (whatsapp on Android/desktop, sms on iOS)
-// and the placement source via data-wa-source.
+// All CTAs go to sms: directly — no iOS detection needed.
 // ══════════════════════════════════════════════
 document.addEventListener('click', (e) => {
   const link = e.target.closest('a[data-wa-source]');
   if (!link) return;
   const source = link.dataset.waSource || 'unknown';
-  const medium = link.href.startsWith('sms:') ? 'sms' : 'whatsapp';
   if (window.gtag) {
     gtag('event', 'click_contact', {
       source: source,
-      medium: medium,
+      medium: 'sms',
       transport_type: 'beacon'
     });
   }
   if (window.fbq) {
-    fbq('track', 'Contact', { source: source, medium: medium });
+    fbq('track', 'Contact', { source: source, medium: 'sms' });
   }
 });
 
@@ -124,7 +101,7 @@ document.addEventListener('click', (e) => {
 // Floating Contact FAB visibility
 // Appears once user scrolls past 70% of viewport (i.e. past the hero)
 // ══════════════════════════════════════════════
-const fab = document.querySelector('.fab-whatsapp');
+const fab = document.querySelector('.fab-contact');
 if (fab) {
   let ticking = false;
   const updateFab = () => {
@@ -147,7 +124,7 @@ if (fab) {
 // ══════════════════════════════════════════════
 // Reveal on scroll (subtle entrance animation)
 // ══════════════════════════════════════════════
-const revealEls = document.querySelectorAll('.unit-row, .amenities-grid-6 figure, .trust-bar__item, .final-cta__inner, .fees-card');
+const revealEls = document.querySelectorAll('.unit-row, .gallery-item, .final-cta__inner, .fees-card');
 revealEls.forEach(el => el.classList.add('reveal'));
 if ('IntersectionObserver' in window) {
   const io = new IntersectionObserver((entries) => {
@@ -182,14 +159,12 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 // ══════════════════════════════════════════════
 const I18N_ES = {
   // Concession banner
-  "Limited-time move-in offer": "Oferta de mudanza por tiempo limitado",
-  "— ask us about current bundles.": "— consúltanos sobre los paquetes actuales.",
-  "Ask us about current move-in offers.": "Consúltanos sobre ofertas actuales de mudanza.",
+  "8 weeks free rent": "8 semanas de renta gratis",
+  "— Lease by May 31st": "— Firma antes del 31 de mayo",
   "Close offer banner": "Cerrar banner de oferta",
 
   // Header
   "Casa Princeton — top of page": "Casa Princeton — inicio de página",
-  "Princeton · FL": "Princeton · FL",
   "Page sections": "Secciones de la página",
   "Floor plans": "Planos",
   "Pricing": "Precios",
@@ -201,41 +176,28 @@ const I18N_ES = {
   "Contact Us": "Contáctanos",
 
   // Hero
-  "Brand-new luxury apartments": "Apartamentos de lujo recién estrenados",
-  "in": "en",
-  "Princeton, FL.": "Princeton, FL.",
+  "New Apartments": "Apartamentos Nuevos",
+  "in Princeton, FL": "en Princeton, FL",
+  "— Now Leasing": "— Ahora alquilando",
   "1 BR from": "1 DOR desde",
   "2 BR from": "2 DOR desde",
-  "Brand-new homes in Princeton, FL. Tours available daily.": "Hogares recién estrenados en Princeton, FL. Tours disponibles todos los días.",
+  "8 weeks free rent — Lease by May 31st. Tours available daily.": "8 semanas de renta gratis — firma antes del 31 de mayo. Tours disponibles todos los días.",
   "/mo": "/mes",
 
-  // Trust bar
-  "Why Casa Princeton": "Por qué Casa Princeton",
-  "Brand new": "Recién estrenado",
-  "Built in 2025": "Construido en 2025",
-  "Lowest price/sqft": "Menor precio/sqft",
-  "in South Dade": "en South Dade",
-  "Managed by ZRS": "Gestionado por ZRS",
-  "Professional management": "Gestión profesional",
-
-  // Units
+  // Units (simplified to 2 generic cards)
   "Find your home.": "Encuentra tu hogar.",
-  "Tap WhatsApp on the unit you want — we reply within minutes.": "Toca Contáctanos en la unidad que te interese — respondemos en minutos.",
-  "MOST POPULAR": "MÁS POPULAR",
+  "Tap Contact Us on the unit you want — we reply within minutes.": "Toca Contáctanos en la unidad que te interese — respondemos en minutos.",
   "1 BR": "1 DOR",
   "2 BR": "2 DOR",
-  "3 BR": "3 DOR",
-  "The Cypress": "The Cypress",
-  "The Magnolia": "The Magnolia",
-  "The Royal Palm": "The Royal Palm",
-  "The Coral Reef": "The Coral Reef",
-  "· Townhome": "· Townhome",
+  "1 Bedroom": "1 Dormitorio",
+  "2 Bedrooms": "2 Dormitorios",
+  "from 728 sqft": "desde 728 pies²",
+  "from 1,082 sqft": "desde 1,082 pies²",
   "From": "Desde",
   "See floor plan": "Ver plano",
-  "See Cypress floor plan": "Ver plano de Cypress",
-  "See Magnolia floor plan": "Ver plano de Magnolia",
-  "See Royal Palm floor plan": "Ver plano de Royal Palm",
-  "See Coral Reef floor plan": "Ver plano de Coral Reef",
+  "See 1 Bedroom floor plan": "Ver plano de 1 Dormitorio",
+  "See 2 Bedroom floor plan": "Ver plano de 2 Dormitorios",
+  "Other floor plans available — talk with our team →": "Otros planos disponibles — habla con nuestro equipo →",
 
   // Fees section (mirror of casaprincetonfl.com Fee Overview)
   "Transparent pricing.": "Precios transparentes.",
@@ -316,21 +278,21 @@ const I18N_ES = {
   "Do I need renter's insurance?": "¿Necesito seguro de renta?",
   "Yes. All residents are required to carry minimum liability renter's insurance. Affordable plans are available — we can recommend providers at lease signing.": "Sí. Todos los residentes deben tener un seguro de renta de responsabilidad mínima. Hay planes asequibles disponibles — podemos recomendar proveedores al firmar el contrato.",
 
-  // Amenities
-  "Amenities.": "Amenidades.",
+  // Amenities & community gallery
+  "Amenities & community.": "Amenidades y comunidad.",
   "Designed for everyday comfort and weekend living.": "Diseñadas para la comodidad diaria y la vida de fin de semana.",
-  "Resort-style pool": "Piscina estilo resort",
-  "Heated saltwater pool with sundeck and cabanas.": "Piscina de agua salada climatizada con solárium y cabañas.",
-  "24/7 fitness center": "Gimnasio 24/7",
-  "Cardio, free weights, and strength machines — open around the clock.": "Cardio, pesas libres y máquinas de fuerza — abierto las 24 horas.",
-  "Co-working lounge": "Lounge de coworking",
-  "Quiet study nooks and shared workstations with high-speed Wi-Fi.": "Rincones tranquilos de estudio y estaciones de trabajo compartidas con Wi-Fi de alta velocidad.",
+  "Modern exteriors": "Exteriores modernos",
+  "Clubhouse lobby": "Lobby clubhouse",
+  "Lounge": "Lounge",
+  "Resident lounge": "Lounge para residentes",
   "Outdoor lounge": "Lounge al aire libre",
-  "Grilling stations, fire pit, and shaded seating for evenings outside.": "Parrillas, fogata y asientos a la sombra para noches al aire libre.",
-  "On-site dog park and pet-wash station. Up to 2 pets per home.": "Parque para perros y estación de lavado en el sitio. Hasta 2 mascotas por hogar.",
-  "On-site parking": "Estacionamiento en el sitio",
-  "Open parking included. Covered and EV charging spots available.": "Estacionamiento abierto incluido. Hay puestos cubiertos y carga eléctrica disponibles.",
-  "Photos coming soon — community is brand new.": "Fotos disponibles próximamente — la comunidad es recién estrenada.",
+  "Sunlit living spaces": "Espacios iluminados",
+  "Modern kitchens": "Cocinas modernas",
+  "Sunset views": "Vistas al atardecer",
+  "Spacious bedrooms": "Dormitorios espaciosos",
+  "Designer bathrooms": "Baños de diseño",
+  "24/7 fitness center": "Gimnasio 24/7",
+  "Resident mailroom": "Sala de correo",
 
   // Community / site plan
   "The community.": "La comunidad.",
@@ -342,10 +304,8 @@ const I18N_ES = {
   "Floor plan": "Plano",
   "Renderings — actual finishes and dimensions may vary.": "Renderizaciones — los acabados y dimensiones reales pueden variar.",
   "Close floor plan": "Cerrar plano",
-  "The Cypress — 1 BR floor plan": "Plano de The Cypress — 1 DOR",
-  "The Magnolia — 2 BR floor plan": "Plano de The Magnolia — 2 DOR",
-  "The Royal Palm — 2 BR Townhome floor plan": "Plano de The Royal Palm — Townhome 2 DOR",
-  "The Coral Reef — 3 BR floor plan": "Plano de The Coral Reef — 3 DOR",
+  "1 Bedroom — Floor plan": "1 Dormitorio — Plano",
+  "2 Bedrooms — Floor plan": "2 Dormitorios — Plano",
   "Casa Princeton": "Casa Princeton",
 
   // Location
@@ -355,6 +315,7 @@ const I18N_ES = {
   // Final CTA
   "Ready to see it?": "¿Listo para verlo?",
   "Tour available daily.": "Tours disponibles todos los días.",
+  "8 weeks free rent — Lease by May 31st.": "8 semanas de renta gratis — firma antes del 31 de mayo.",
 
   // Footer
   "Casa Princeton Apartments": "Casa Princeton Apartments",
