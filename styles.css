@@ -2906,6 +2906,9 @@ a:focus-visible {
   padding: 80px 24px;
   background: var(--cream);
 }
+@media (max-width: 720px) {
+  .fees-section { padding: 32px 18px 40px; }
+}
 .fees-section__inner {
   max-width: 1120px;
   margin: 0 auto;
@@ -3079,6 +3082,10 @@ a:focus-visible {
 .policies-section {
   padding: 80px 24px;
   background: var(--paper);
+}
+@media (max-width: 720px) {
+  .policies-section { padding: 40px 18px 48px; }
+  .policies-section h2 { margin-bottom: 22px; font-size: clamp(26px, 6vw, 32px); }
 }
 .policies-section__inner {
   max-width: 1040px;
