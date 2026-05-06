@@ -2321,6 +2321,9 @@ a:focus-visible {
   padding: 80px 24px;
   background: var(--paper);
 }
+@media (max-width: 720px) {
+  .units-section { padding: 48px 18px 32px; }
+}
 .units-section__inner {
   max-width: 960px;
   margin: 0 auto;
@@ -2341,6 +2344,9 @@ a:focus-visible {
 .units-section__more {
   text-align: center;
   margin: 30px 0 0;
+}
+@media (max-width: 720px) {
+  .units-section__more { margin: 18px 0 0; font-size: 13px; }
 }
 .units-section__more-link {
   color: var(--navy);
@@ -2510,6 +2516,9 @@ a:focus-visible {
 .amenities-landing {
   padding: 80px 24px;
   background: var(--cream);
+}
+@media (max-width: 720px) {
+  .amenities-landing { padding: 40px 18px 48px; }
 }
 .amenities-landing__inner {
   max-width: 1120px;
