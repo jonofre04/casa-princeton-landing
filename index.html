@@ -313,16 +313,8 @@
     <div class="policies-grid">
 
       <!-- Pet card -->
-      <article class="policy-card">
-        <div class="policy-card__icon" aria-hidden="true">
-          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="16" cy="20" r="6"/>
-            <circle cx="9" cy="11" r="3"/>
-            <circle cx="23" cy="11" r="3"/>
-            <circle cx="6" cy="18" r="2.5"/>
-            <circle cx="26" cy="18" r="2.5"/>
-          </svg>
-        </div>
+      <article class="policy-card policy-card--pet">
+        <img src="assets/img/dog-mascot.png" alt="Casa Princeton mascot — French Bulldog with sunglasses" class="policy-card__mascot" loading="lazy" />
         <h3>Pet-friendly community</h3>
         <ul class="policy-card__list">
           <li><span>Maximum pets</span><strong>2 per home</strong></li>
@@ -330,25 +322,29 @@
           <li><span>One-time pet fee</span><strong>$250 / pet</strong></li>
           <li><span>Monthly pet rent</span><strong>$20 / pet</strong></li>
         </ul>
+
+        <div class="policy-card__nearby">
+          <h4>Pet services nearby</h4>
+          <ul class="policy-card__list policy-card__list--nearby">
+            <li><span>Milo's Daycare &amp; Boarding</span><strong>4 min</strong></li>
+            <li><span>Robert's Pet Shop</span><strong>5 min</strong></li>
+            <li><span>Gilley Animal Clinic</span><strong>10 min</strong></li>
+          </ul>
+        </div>
+
         <p class="policy-card__note">Breed restrictions apply. Service and emotional-support animals exempt from fees per Fair Housing Act. Ask us about your pet.</p>
       </article>
 
       <!-- Parking card -->
-      <article class="policy-card">
-        <div class="policy-card__icon" aria-hidden="true">
-          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="4" y="14" width="24" height="10" rx="2"/>
-            <path d="M7 14l2-6h14l2 6"/>
-            <circle cx="10" cy="24" r="2.5" fill="currentColor"/>
-            <circle cx="22" cy="24" r="2.5" fill="currentColor"/>
-          </svg>
-        </div>
+      <article class="policy-card policy-card--parking">
+        <img src="assets/img/car-mascot.png" alt="White SUV illustration" class="policy-card__mascot policy-card__mascot--vehicle" loading="lazy" />
         <h3>Parking on-site</h3>
         <ul class="policy-card__list">
           <li><span>Open parking</span><strong>Included</strong></li>
           <li><span>Covered (reserved)</span><strong>$100 / mo</strong></li>
           <li><span>EV charging</span><strong>By usage</strong></li>
         </ul>
+        <p class="policy-card__intro">Our community offers parking spaces for each of our residents relative to occupancy guidelines for each apartment. If you have a motorcycle, it may be parked in the designated spaces for vehicles.</p>
         <p class="policy-card__note">Open parking is unassigned and available to all residents. Covered spots are limited and assigned by request.</p>
       </article>
 

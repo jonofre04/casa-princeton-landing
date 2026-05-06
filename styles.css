@@ -3142,7 +3142,50 @@ a:focus-visible {
   line-height: 1.5;
   margin: 12px 0 0;
 }
-@media (max-width: 720px) { .policies-grid { grid-template-columns: 1fr; gap: 16px; } }
+/* Mascot images (pet, vehicle) — centered at the top of each policy card */
+.policy-card--pet,
+.policy-card--parking { position: relative; }
+.policy-card__mascot {
+  display: block;
+  height: 200px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  margin: 0 auto 12px;
+}
+.policy-card__mascot--vehicle {
+  /* Same vertical footprint as the pet mascot for visual balance */
+  height: 200px;
+}
+.policy-card__intro {
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 1.55;
+  margin: 14px 0 0;
+}
+@media (max-width: 720px) {
+  .policy-card__mascot { height: 160px; }
+}
+/* Nearby pet services sub-block */
+.policy-card__nearby {
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px dashed var(--cream-deep);
+}
+.policy-card__nearby h4 {
+  font-family: var(--serif);
+  font-size: 14px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--sand);
+  margin: 0 0 6px;
+  font-weight: 700;
+}
+.policy-card__list--nearby { margin: 0; }
+@media (max-width: 720px) {
+  .policies-grid { grid-template-columns: 1fr; gap: 16px; }
+  .policy-card__mascot { width: 110px; }
+}
 
 /* FAQs section */
 .faqs-section {

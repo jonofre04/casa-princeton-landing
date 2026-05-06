@@ -252,6 +252,14 @@ const I18N_ES = {
   "Maximum pets": "Máximo de mascotas",
   "2 per home": "2 por hogar",
   "Each additional animal": "Cada animal adicional",
+  "Pet services nearby": "Servicios para mascotas cerca",
+  "Milo's Daycare & Boarding": "Milo's Daycare & Boarding",
+  "Robert's Pet Shop": "Robert's Pet Shop",
+  "Gilley Animal Clinic": "Gilley Animal Clinic",
+  "4 min": "4 min",
+  "5 min": "5 min",
+  "10 min": "10 min",
+  "Casa Princeton mascot — French Bulldog with sunglasses": "Mascota de Casa Princeton — Bulldog Francés con gafas",
   "One-time pet fee": "Cuota única de mascota",
   "Monthly pet rent": "Renta mensual de mascota",
   "Breed restrictions apply. Service and emotional-support animals exempt from fees per Fair Housing Act. Ask us about your pet.": "Aplican restricciones de raza. Los animales de servicio y de apoyo emocional están exentos de cuotas según la Fair Housing Act. Consúltanos sobre tu mascota.",
@@ -260,6 +268,8 @@ const I18N_ES = {
   "Included": "Incluido",
   "Covered (reserved)": "Cubierto (reservado)",
   "Open parking is unassigned and available to all residents. Covered spots are limited and assigned by request.": "El estacionamiento abierto no está asignado y está disponible para todos los residentes. Los puestos cubiertos son limitados y se asignan a pedido.",
+  "Our community offers parking spaces for each of our residents relative to occupancy guidelines for each apartment. If you have a motorcycle, it may be parked in the designated spaces for vehicles.": "Nuestra comunidad ofrece estacionamiento para cada residente según las pautas de ocupación de cada apartamento. Si tienes una motocicleta, puede estacionarse en los espacios designados para vehículos.",
+  "Casa Princeton townhomes with covered parking": "Townhomes de Casa Princeton con estacionamiento cubierto",
 
   // FAQs
   "Frequently asked.": "Preguntas frecuentes.",
