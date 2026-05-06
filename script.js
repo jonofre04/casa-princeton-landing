@@ -274,6 +274,12 @@ const I18N_ES = {
   // FAQs
   "Frequently asked.": "Preguntas frecuentes.",
   "Don't see your question? Tap Contact Us — we reply within minutes.": "¿No ves tu pregunta? Toca Contáctanos — respondemos en minutos.",
+  "What floor plans does Casa Princeton offer?": "¿Qué planos ofrece Casa Princeton?",
+  "We have 1 Bedroom and 2 Bedroom apartments and townhomes. Tap See floor plan on each unit above, or tap Contact Us to ask about additional layouts available.": "Tenemos apartamentos y townhomes de 1 y 2 dormitorios. Toca Ver plano en cada unidad arriba, o toca Contáctanos para consultar otros layouts disponibles.",
+  "What are the starting prices on One Bedroom apartments?": "¿Cuál es el precio inicial de los apartamentos de 1 dormitorio?",
+  "Our 1 Bedroom apartments start at $1,885/mo on a 12-month lease.": "Nuestros apartamentos de 1 dormitorio comienzan en $1,885/mes con contrato de 12 meses.",
+  "What are the starting prices on Two Bedroom apartments?": "¿Cuál es el precio inicial de los apartamentos de 2 dormitorios?",
+  "Our 2 Bedroom apartments start at $2,145/mo on a 12-month lease.": "Nuestros apartamentos de 2 dormitorios comienzan en $2,145/mes con contrato de 12 meses.",
   "What's included in my monthly rent?": "¿Qué incluye mi renta mensual?",
   "Base rent covers your home. Trash service ($20), water & sewer ($55–85), and 1 GB fiber internet ($60) are billed monthly in addition. Pet rent applies if you have pets.": "La renta base cubre tu hogar. Servicio de basura ($20), agua y alcantarillado ($55–85), e internet de fibra 1 GB ($60) se facturan mensualmente además. La renta de mascota aplica si tienes mascotas.",
   "What lease terms are available?": "¿Qué plazos de contrato están disponibles?",
