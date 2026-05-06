@@ -1,7 +1,36 @@
 /* ─────────────────────────────────────────
    Casa Princeton — Luxury Apartments FL
-   Palette: navy + sand + cream
+   Palette: navy + sand + cream · Type: Futura PT Cond (brand)
    ───────────────────────────────────────── */
+
+@font-face {
+  font-family: 'Futura PT Cond';
+  src: url('assets/fonts/FuturaPTCondBook.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Futura PT Cond';
+  src: url('assets/fonts/FuturaPTCondMedium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Futura PT Cond';
+  src: url('assets/fonts/FuturaPTCondBold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Futura PT Cond';
+  src: url('assets/fonts/FuturaPTCondExtraBold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
 
 :root {
   --navy:       #1B2E4A;
@@ -18,8 +47,8 @@
   --shadow-sm:  0 2px 12px rgba(15, 30, 51, 0.06);
   --shadow-md:  0 16px 40px rgba(15, 30, 51, 0.10);
   --shadow-lg:  0 28px 70px rgba(15, 30, 51, 0.16);
-  --serif:      'Cormorant Garamond', Georgia, serif;
-  --sans:       'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --serif:      'Futura PT Cond', 'Helvetica Neue', Arial, sans-serif;
+  --sans:       'Futura PT Cond', 'Helvetica Neue', Arial, sans-serif;
   --container:  1280px;
   --r:          6px;
 }
@@ -2680,36 +2709,44 @@ a:focus-visible {
   .landing-footer { grid-template-columns: 1fr; gap: 24px; padding: 36px 20px 24px; }
 }
 
-/* Floating Contact FAB — brand black */
+/* Floating Contact FAB — pill with icon + label, brand black */
 .fab-contact {
   position: fixed;
   bottom: 22px; right: 22px;
-  width: 62px; height: 62px;
   background: #000;
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
+  color: #fff;
+  border-radius: 50px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 22px 14px 18px;
   box-shadow: 0 8px 28px rgba(0, 0, 0, 0.4), 0 2px 8px rgba(0, 0, 0, 0.2);
   z-index: 99;
   transition: transform 0.2s ease, opacity 0.3s ease, box-shadow 0.2s, background 0.2s;
   opacity: 0;
   pointer-events: none;
-  transform: scale(0.8) translateY(20px);
+  transform: translateY(20px);
   text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.2px;
 }
 .fab-contact.is-visible {
   opacity: 1;
   pointer-events: auto;
-  transform: scale(1) translateY(0);
+  transform: translateY(0);
 }
 .fab-contact:hover {
   background: #1f1f1f;
-  transform: scale(1.08);
+  transform: translateY(-2px);
   box-shadow: 0 12px 36px rgba(0, 0, 0, 0.55);
+  color: #fff;
 }
-.fab-contact svg { width: 30px; height: 30px; color: #fff; }
+.fab-contact__icon { width: 22px; height: 22px; flex-shrink: 0; color: #fff; }
+.fab-contact__text { white-space: nowrap; }
 @media (max-width: 520px) {
-  .fab-contact { width: 56px; height: 56px; bottom: 18px; right: 18px; }
-  .fab-contact svg { width: 28px; height: 28px; }
+  .fab-contact { bottom: 18px; right: 18px; padding: 12px 18px 12px 14px; font-size: 14px; }
+  .fab-contact__icon { width: 20px; height: 20px; }
 }
 
 /* ════════════════════════════════════════════════════════════════════
