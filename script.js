@@ -8,7 +8,9 @@ if (year) year.textContent = new Date().getFullYear();
 // Sticky concession banner — close + persist
 // ══════════════════════════════════════════════
 (function setupConcessionBanner() {
-  const STORAGE_KEY = 'cp_concession_dismissed';
+  // Versioned key — bump suffix when banner copy changes so users who dismissed
+  // the previous offer still see the new one. Current: 8 weeks free rent / May 31st.
+  const STORAGE_KEY = 'cp_concession_dismissed_v2';
   const banner = document.getElementById('concessionBanner');
   if (!banner) return;
   let dismissed = false;
