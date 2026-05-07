@@ -3444,5 +3444,12 @@ a:focus-visible {
   .btn--sm { font-size: 16px; padding: 11px 20px; }
 
   /* Footer */
-  .footer-info, .footer-links a, .footer-info p { font-size: 18px; }
+  .landing-footer { font-size: 19px; gap: 32px; padding: 44px 22px 28px; }
+  .landing-footer__col strong { font-size: 22px; margin-bottom: 10px; }
+  .landing-footer__col p,
+  .landing-footer__col a { font-size: 19px; line-height: 1.7; }
+  .eho-badge { font-size: 14px; padding: 8px 14px; }
+  .landing-footer__legal { font-size: 16px; }
+  .landing-footer__legal a { font-size: 16px; }
+  .landing-footer__copy { font-size: 15px; }
 }
