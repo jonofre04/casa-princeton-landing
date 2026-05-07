@@ -367,7 +367,7 @@ const I18N_ES = {
   "Is there an application fee?": "¿Hay cuota de aplicación?",
   "$49 per applicant covers credit, background, and identity verification, plus a $275 administrative fee per household.": "$49 por aplicante cubre verificación de crédito, antecedentes e identidad, más $275 de cuota administrativa por hogar.",
   "Are pets allowed?": "¿Se permiten mascotas?",
-  "Yes — up to 2 pets per home, 75 lb max per pet. $250 one-time fee plus $20/mo per pet. Breed restrictions apply. Service and emotional-support animals are exempt from fees.": "Sí — hasta 2 mascotas por hogar, 75 lb máx por mascota. $250 de cuota única más $20/mes por mascota. Aplican restricciones de raza. Los animales de servicio y de apoyo emocional están exentos de cuotas.",
+  "Yes — up to 2 pets per home. $250 one-time fee plus $20/mo per pet. Breed restrictions apply. Service and emotional-support animals are exempt from fees.": "Sí — hasta 2 mascotas por hogar. $250 de cuota única más $20/mes por mascota. Aplican restricciones de raza. Los animales de servicio y de apoyo emocional están exentos de cuotas.",
   "Do you offer covered parking?": "¿Ofrecen estacionamiento cubierto?",
   "Open parking is included for all residents. Reserved covered spots are $100/mo (limited availability). EV charging stations are available on-site, billed by usage.": "El estacionamiento abierto está incluido para todos los residentes. Los puestos cubiertos reservados son $100/mes (disponibilidad limitada). Las estaciones de carga eléctrica están disponibles en el sitio, facturadas por consumo.",
   "When can I move in?": "¿Cuándo puedo mudarme?",
