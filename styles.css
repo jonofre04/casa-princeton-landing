@@ -3381,3 +3381,44 @@ a:focus-visible {
 @media (max-width: 520px) {
   .lang-toggle { padding: 6px 10px; font-size: 11px; }
 }
+
+/* ════════════════════════════════════════════════════════
+   Mobile readability bump — keeps body copy comfortably
+   sized on phones without changing component layouts.
+   ════════════════════════════════════════════════════════ */
+@media (max-width: 720px) {
+  body { font-size: 18px; }
+
+  .units-section__sub,
+  .amenities-landing__sub,
+  .fees-accordion__sub,
+  .fees-section__note,
+  .units-section__more-link { font-size: 16px; }
+
+  .unit-row__name { font-size: 17px; }
+  .unit-row__sqft { font-size: 15px; }
+  .unit-row__price { font-size: 16px; }
+  .unit-row__plan-link { font-size: 15px; }
+
+  .fees-card h3 { font-size: 19px; }
+  .fees-card__sub { font-size: 14px; }
+  .fees-list li { font-size: 16px; }
+  .fees-card__note { font-size: 14px; }
+
+  .policy-card h3 { font-size: 22px; }
+  .policy-card__list li { font-size: 16px; }
+  .policy-card__note { font-size: 14px; }
+  .policy-card__intro { font-size: 15.5px; }
+  .policy-card__nearby h4 { font-size: 14px; }
+
+  .faqs-section__sub { font-size: 16px; }
+  .faq summary { font-size: 18px; padding: 18px 20px; }
+  .faq p { font-size: 16px; padding: 0 20px 18px; }
+
+  .gallery-item figcaption { font-size: 14px; }
+
+  .final-cta p,
+  .final-cta__sub { font-size: 16px; }
+
+  .footer-info, .footer-links a, .footer-info p { font-size: 15px; }
+}
