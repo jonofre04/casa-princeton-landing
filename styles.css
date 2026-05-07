@@ -3209,7 +3209,7 @@ a:focus-visible {
 .policy-card__icon svg { width: 28px; height: 28px; }
 .policy-card h3 {
   font-family: var(--serif);
-  font-size: 22px;
+  font-size: 26px;
   color: var(--navy);
   margin: 0 0 14px;
   font-weight: 600;
@@ -3223,19 +3223,19 @@ a:focus-visible {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  padding: 10px 0;
+  padding: 12px 0;
   border-bottom: 1px solid var(--cream-deep);
-  font-size: 15px;
+  font-size: 16.5px;
   gap: 14px;
 }
 .policy-card__list li:last-child { border-bottom: none; }
 .policy-card__list span { color: var(--ink-soft); }
 .policy-card__list strong { color: var(--navy); font-weight: 700; white-space: nowrap; }
 .policy-card__note {
-  font-size: 12.5px;
+  font-size: 14px;
   color: var(--ink-soft);
   font-style: italic;
-  line-height: 1.5;
+  line-height: 1.55;
   margin: 12px 0 0;
 }
 /* Mascot images (pet, vehicle) — centered at the top of each policy card */
@@ -3254,9 +3254,9 @@ a:focus-visible {
   height: 200px;
 }
 .policy-card__intro {
-  font-size: 14.5px;
+  font-size: 16px;
   color: var(--ink-soft);
-  line-height: 1.55;
+  line-height: 1.6;
   margin: 14px 0 0;
 }
 @media (max-width: 720px) {
@@ -3270,7 +3270,7 @@ a:focus-visible {
 }
 .policy-card__nearby h4 {
   font-family: var(--serif);
-  font-size: 15px;
+  font-size: 16px;
   letter-spacing: 1.2px;
   text-transform: uppercase;
   color: var(--sand);
