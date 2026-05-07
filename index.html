@@ -118,11 +118,24 @@
 
 <!-- ════════ 1. Hero ════════ -->
 <section class="hero-landing" id="hero">
-  <div class="hero__media" aria-hidden="true">
-    <img src="assets/img/hero.jpg" alt="" class="hero__photo" loading="eager" fetchpriority="high" />
+  <div class="hero-landing__bg" id="heroCarousel" role="region" aria-roledescription="carousel" aria-label="Casa Princeton photo gallery">
+    <figure class="hero-landing__slide is-active" aria-roledescription="slide" aria-label="1 of 4">
+      <img src="assets/img/hero.jpg" alt="Casa Princeton resort-style pool with the building behind" loading="eager" fetchpriority="high" />
+    </figure>
+    <figure class="hero-landing__slide" aria-roledescription="slide" aria-label="2 of 4" aria-hidden="true">
+      <img src="assets/img/gallery/lobby-clubhouse.jpg" alt="Modern clubhouse lobby" loading="lazy" />
+    </figure>
+    <figure class="hero-landing__slide" aria-roledescription="slide" aria-label="3 of 4" aria-hidden="true">
+      <img src="assets/img/gallery/apartment-living.jpg" alt="Sunlit living area in a Casa Princeton apartment" loading="lazy" />
+    </figure>
+    <figure class="hero-landing__slide" aria-roledescription="slide" aria-label="4 of 4" aria-hidden="true">
+      <img src="assets/img/gallery/outdoor-lounge.jpg" alt="Outdoor covered lounge with seating" loading="lazy" />
+    </figure>
   </div>
-  <div class="hero__overlay"></div>
-  <div class="hero-landing__content">
+
+  <div class="hero-landing__overlay"></div>
+
+  <div class="hero-landing__inner">
     <h1><em>New Apartments</em> in Princeton, FL<br/>— Now Leasing</h1>
     <div class="hero__prices">
       <div class="hero__price-chip">
@@ -139,6 +152,13 @@
       <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="icon-chat"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg>
       <span>Contact Us</span>
     </a>
+  </div>
+
+  <div class="hero-landing__dots" role="tablist" aria-label="Choose slide">
+    <button type="button" class="hero-landing__dot is-active" data-slide="0" aria-label="Show slide 1" aria-selected="true"></button>
+    <button type="button" class="hero-landing__dot" data-slide="1" aria-label="Show slide 2" aria-selected="false"></button>
+    <button type="button" class="hero-landing__dot" data-slide="2" aria-label="Show slide 3" aria-selected="false"></button>
+    <button type="button" class="hero-landing__dot" data-slide="3" aria-label="Show slide 4" aria-selected="false"></button>
   </div>
 </section>
 

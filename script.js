@@ -37,6 +37,82 @@ if (year) year.textContent = new Date().getFullYear();
 })();
 
 // ══════════════════════════════════════════════
+// Hero photo carousel — auto-rotate, dots, swipe, keyboard
+// ══════════════════════════════════════════════
+(function setupHeroCarousel() {
+  const root = document.getElementById('heroCarousel');
+  if (!root) return;
+  const hero = root.closest('.hero-landing') || document;
+  const slides = Array.from(root.querySelectorAll('.hero-landing__slide'));
+  const dots = Array.from(hero.querySelectorAll('.hero-landing__dot'));
+  if (slides.length < 2) return;
+  const INTERVAL = 6500;
+  let current = 0;
+  let timer = null;
+  let paused = false;
+
+  function show(index) {
+    current = (index + slides.length) % slides.length;
+    slides.forEach((s, i) => {
+      s.classList.toggle('is-active', i === current);
+      s.setAttribute('aria-hidden', i === current ? 'false' : 'true');
+    });
+    dots.forEach((d, i) => {
+      d.classList.toggle('is-active', i === current);
+      d.setAttribute('aria-selected', i === current ? 'true' : 'false');
+    });
+  }
+  function next() { show(current + 1); }
+  function prev() { show(current - 1); }
+  function start() {
+    stop();
+    if (paused) return;
+    timer = setInterval(next, INTERVAL);
+  }
+  function stop() {
+    if (timer) { clearInterval(timer); timer = null; }
+  }
+
+  dots.forEach((dot) => {
+    dot.addEventListener('click', () => {
+      const i = parseInt(dot.dataset.slide, 10);
+      if (!isNaN(i)) { show(i); start(); }
+    });
+  });
+
+  // Pause on hover (desktop)
+  root.addEventListener('mouseenter', () => { paused = true; stop(); });
+  root.addEventListener('mouseleave', () => { paused = false; start(); });
+
+  // Pause briefly on touch (mobile)
+  root.addEventListener('touchstart', () => { paused = true; stop(); }, { passive: true });
+  root.addEventListener('touchend', () => {
+    setTimeout(() => { paused = false; start(); }, 1500);
+  }, { passive: true });
+
+  // Swipe gesture
+  let touchStartX = 0;
+  root.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+  root.addEventListener('touchend', (e) => {
+    const dx = e.changedTouches[0].screenX - touchStartX;
+    if (Math.abs(dx) > 40) { dx < 0 ? next() : prev(); }
+  }, { passive: true });
+
+  // Keyboard navigation when carousel has focus
+  root.setAttribute('tabindex', '0');
+  root.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') { next(); start(); }
+    else if (e.key === 'ArrowLeft') { prev(); start(); }
+  });
+
+  // Respect prefers-reduced-motion: keep first slide, no auto-rotate
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduceMotion) start();
+})();
+
+// ══════════════════════════════════════════════
 // Floor plan modal — open from any [data-floorplan] button
 // ══════════════════════════════════════════════
 (function setupFloorplanModal() {

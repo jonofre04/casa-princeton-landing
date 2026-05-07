@@ -2260,58 +2260,132 @@ a:focus-visible {
 .btn--sm { font-size: 13px; padding: 8px 16px; gap: 6px; }
 .btn--sm svg { width: 14px; height: 14px; }
 
-/* Hero (full viewport landing) */
+/* Hero (full viewport landing) — background photo carousel + centered text */
 .hero-landing {
-  min-height: 100vh;
-  min-height: 100svh;
-  display: flex; align-items: center; justify-content: center;
-  padding: 100px 24px 80px;
   position: relative;
   color: var(--cream);
+  padding: 130px 24px 90px;
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   overflow: hidden;
+  isolation: isolate;
 }
-/* Mobile: tighter spacing so the CTA button fits above the fold */
-@media (max-width: 720px) {
-  .hero-landing {
-    padding: 56px 18px 28px;
-    min-height: auto;
-    align-items: flex-start;
-  }
-  .hero-landing__content { padding-top: 12px; }
-  .hero-landing__content h1 {
-    font-size: clamp(26px, 6.5vw, 36px);
-    margin: 0 0 10px;
-    line-height: 1.15;
-  }
+.hero-landing__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
 }
-.hero-landing__content {
-  position: relative; z-index: 2;
-  max-width: 720px;
+.hero-landing__slide {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  opacity: 0;
+  transition: opacity 1.4s ease-in-out;
 }
-.hero__badge {
-  display: inline-block;
-  background: var(--sand);
-  color: var(--navy-deep);
-  padding: 8px 20px;
-  border-radius: 50px;
-  font-weight: 700; font-size: 12px;
-  letter-spacing: 1.2px; text-transform: uppercase;
-  margin-bottom: 28px;
-  box-shadow: 0 4px 14px rgba(201, 169, 97, 0.3);
+.hero-landing__slide.is-active { opacity: 1; }
+.hero-landing__slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transform: scale(1.05);
+  transition: transform 0s;
 }
-.hero-landing__content h1 {
-  font-size: clamp(36px, 6vw, 72px);
-  line-height: 1.1;
-  margin: 0 0 18px;
-  font-weight: 600;
+/* Ken Burns: when slide becomes active, slowly zoom + drift for ~7s */
+.hero-landing__slide.is-active img {
+  animation: kenBurns 7.5s ease-out forwards;
+}
+@keyframes kenBurns {
+  0%   { transform: scale(1.05) translate(0, 0); }
+  100% { transform: scale(1.18) translate(-1.5%, -1%); }
+}
+/* Alternate direction per slide so motion doesn't feel repetitive */
+.hero-landing__slide:nth-child(2).is-active img { animation-name: kenBurnsAlt1; }
+.hero-landing__slide:nth-child(3).is-active img { animation-name: kenBurnsAlt2; }
+.hero-landing__slide:nth-child(4).is-active img { animation-name: kenBurnsAlt3; }
+@keyframes kenBurnsAlt1 {
+  0%   { transform: scale(1.18) translate(-1.5%, -1%); }
+  100% { transform: scale(1.05) translate(1%, 1%); }
+}
+@keyframes kenBurnsAlt2 {
+  0%   { transform: scale(1.05) translate(1.5%, 0); }
+  100% { transform: scale(1.18) translate(-1%, -1.5%); }
+}
+@keyframes kenBurnsAlt3 {
+  0%   { transform: scale(1.18) translate(0, 1%); }
+  100% { transform: scale(1.05) translate(-1.5%, -1%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-landing__slide.is-active img,
+  .hero-landing__slide:nth-child(n).is-active img { animation: none; transform: scale(1); }
+}
+.hero-landing__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(15, 30, 51, 0.55) 0%, rgba(15, 30, 51, 0.65) 100%);
+}
+.hero-landing__inner {
+  position: relative;
+  z-index: 2;
+  max-width: 880px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.hero-landing__inner h1 {
+  font-size: clamp(34px, 5.4vw, 64px);
+  line-height: 1.08;
+  margin: 0 0 6px;
+  font-weight: 700;
   color: var(--cream);
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);
 }
-.hero-landing__content h1 em {
-  color: var(--sand-soft);
+.hero-landing__inner h1 em {
+  color: var(--sand);
   font-style: italic;
 }
-/* Old hero <p> rule removed — replaced by .hero__sub below (centered, max-width 560px) */
+.hero-landing__dots {
+  position: absolute;
+  bottom: 24px;
+  left: 0; right: 0;
+  z-index: 3;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+.hero-landing__dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.45);
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  transition: background 0.2s, width 0.3s;
+}
+.hero-landing__dot:hover { background: rgba(255, 255, 255, 0.75); }
+.hero-landing__dot.is-active {
+  background: var(--cream);
+  width: 28px;
+  border-radius: 6px;
+}
+.hero-landing__dot:focus-visible {
+  outline: 2px solid var(--sand);
+  outline-offset: 3px;
+}
+@media (max-width: 720px) {
+  .hero-landing { padding: 100px 18px 70px; min-height: 78vh; }
+  .hero-landing__inner h1 { font-size: clamp(26px, 6.5vw, 36px); margin: 0 0 6px; line-height: 1.15; }
+  .hero-landing__dot { width: 8px; height: 8px; }
+  .hero-landing__dot.is-active { width: 22px; }
+}
 
 /* Icon for Contact CTAs (generic chat bubble — replaces WhatsApp logo) */
 .icon-chat { width: 18px; height: 18px; flex-shrink: 0; }
@@ -2825,17 +2899,16 @@ a:focus-visible {
 .hero__prices {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 220px));
-  gap: 20px;
-  justify-content: center;
-  margin: 28px auto 18px;
+  gap: 18px;
+  margin: 26px 0 18px;
   max-width: 480px;
 }
 .hero__price-chip {
-  background: rgba(248, 244, 236, 0.10);
+  background: rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
-  border: 1px solid rgba(226, 207, 161, 0.45);
-  padding: 16px 22px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 14px 22px;
   border-radius: 12px;
   text-align: center;
   display: flex;
@@ -2847,14 +2920,15 @@ a:focus-visible {
 .hero__price-chip:hover {
   transform: translateY(-2px);
   border-color: var(--sand);
-  background: rgba(248, 244, 236, 0.16);
+  background: rgba(255, 255, 255, 0.18);
 }
 .hero__price-label {
   display: block;
   font-size: 11px;
   letter-spacing: 1.8px;
   text-transform: uppercase;
-  color: var(--sand-soft);
+  color: var(--cream);
+  opacity: 0.85;
   font-weight: 600;
   margin-bottom: 4px;
   white-space: nowrap;
@@ -2862,26 +2936,31 @@ a:focus-visible {
 .hero__price-value {
   display: block;
   font-family: var(--serif);
-  font-size: 32px;
+  font-size: 28px;
   color: var(--cream);
   font-weight: 700;
   line-height: 1;
   white-space: nowrap;
 }
 .hero__price-value small {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 400;
-  color: var(--sand-soft);
+  color: var(--cream);
+  opacity: 0.8;
   margin-left: 2px;
 }
 .hero__sub {
-  font-size: clamp(15px, 1.8vw, 18px);
-  margin: 8px auto 32px;
-  opacity: 0.88;
+  font-size: clamp(15px, 1.6vw, 17px);
+  margin: 10px 0 18px;
   color: var(--cream);
+  opacity: 0.92;
   line-height: 1.5;
-  text-align: center;
   max-width: 560px;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+}
+@media (max-width: 960px) {
+  .hero__prices { justify-content: center; margin-left: auto; margin-right: auto; }
+  .hero__sub { margin-left: auto; margin-right: auto; }
 }
 @media (max-width: 720px) {
   .hero__prices { margin: 12px auto 8px; gap: 10px; }
