@@ -270,7 +270,7 @@ const I18N_ES = {
   "1 Bedroom": "1 Dormitorio",
   "2 Bedrooms": "2 Dormitorios",
   "from 728 sqft": "desde 728 pies²",
-  "834 sqft": "834 pies²",
+  "from 834 sqft": "desde 834 pies²",
   "From": "Desde",
   "See floor plan": "Ver plano",
   "See 1 Bedroom floor plan": "Ver plano de 1 Dormitorio",
