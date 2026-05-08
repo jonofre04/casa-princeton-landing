@@ -277,7 +277,7 @@ const I18N_ES = {
   "See 2 Bedroom floor plan": "Ver plano de 2 Dormitorios",
   "Other floor plans available — talk with our team →": "Otros planos disponibles — habla con nuestro equipo →",
 
-  // Fees section (mirror of casaprincetonfl.com Fee Overview)
+  // Fees section (mirror of casaprincetonflorida.com Fee Overview)
   "Transparent pricing.": "Precios transparentes.",
   "All fees broken down — no surprises at lease signing.": "Todas las cuotas desglosadas — sin sorpresas al firmar el contrato.",
   "Move-In Basics": "Básicos de Mudanza",

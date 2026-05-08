@@ -3,4 +3,4 @@ Allow: /
 Disallow: /_archive/
 Disallow: /brief-cliente.html
 
-Sitemap: https://www.casaprincetonfl.com/sitemap.xml
+Sitemap: https://www.casaprincetonflorida.com/sitemap.xml
