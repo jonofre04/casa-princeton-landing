@@ -3453,6 +3453,9 @@ a:focus-visible {
   .btn--lg { font-size: 19px; padding: 18px 28px; }
   .btn--sm { font-size: 18px; padding: 12px 22px; }
   .btn--contact { font-size: 19px; }
+  /* Header Contact Us must stay compact so it fits on one line on phones */
+  .landing-header .btn--contact { font-size: 14px; padding: 9px 16px; gap: 6px; white-space: nowrap; }
+  .landing-header .btn--contact .icon-chat { width: 15px; height: 15px; }
 
   /* Floating Contact pill */
   .fab-contact__text { font-size: 18px; }
