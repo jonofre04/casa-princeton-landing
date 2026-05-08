@@ -3387,69 +3387,83 @@ a:focus-visible {
    sized on phones without changing component layouts.
    ════════════════════════════════════════════════════════ */
 @media (max-width: 720px) {
-  body { font-size: 20px; }
+  body { font-size: 22px; }
 
   /* Top banner */
-  .concession-banner { font-size: 16px !important; padding: 13px 44px 13px 16px; }
-  .concession-banner__icon { font-size: 18px; }
+  .concession-banner { font-size: 18px !important; padding: 15px 46px 15px 18px; }
+  .concession-banner__icon { font-size: 20px; }
 
-  /* Hero — bigger headline + sub on mobile */
-  .hero-landing__inner h1 { font-size: clamp(32px, 8vw, 44px) !important; line-height: 1.12; }
-  .hero__sub { font-size: 17px !important; max-width: 100%; }
-  .hero__price-label { font-size: 12px; }
-  .hero__price-value { font-size: 26px; }
+  /* Header / lang toggle / Contact CTA in header */
+  .lang-toggle { font-size: 14px !important; padding: 8px 14px !important; }
+
+  /* Hero — much bigger headline + sub on mobile */
+  .hero-landing__inner h1 { font-size: clamp(36px, 9.5vw, 52px) !important; line-height: 1.1; }
+  .hero__sub { font-size: 19px !important; max-width: 100%; }
+  .hero__price-label { font-size: 14px; letter-spacing: 1.4px; }
+  .hero__price-value { font-size: 30px; }
+  .hero__price-value small { font-size: 15px; }
 
   /* Section subtitles + section copy */
   .units-section__sub,
   .amenities-landing__sub,
   .fees-accordion__sub,
   .fees-section__note,
-  .units-section__more-link { font-size: 19px; }
+  .units-section__more-link { font-size: 21px; }
+
+  /* Section h2 floors (clamp lower bound) */
+  .units-section h2,
+  .amenities-landing h2,
+  .policies-section h2,
+  .faqs-section h2 { font-size: clamp(30px, 7vw, 38px); }
 
   /* Unit cards */
-  .unit-row__br { font-size: 13px; }
-  .unit-row__name { font-size: 21px; }
-  .unit-row__sqft { font-size: 18px; }
-  .unit-row__price { font-size: 20px; }
-  .unit-row__plan-link { font-size: 18px; }
+  .unit-row__br { font-size: 15px; }
+  .unit-row__name { font-size: 23px; }
+  .unit-row__sqft { font-size: 20px; }
+  .unit-row__price { font-size: 22px; }
+  .unit-row__plan-link { font-size: 20px; }
 
   /* Fees */
-  .fees-card h3 { font-size: 24px; }
-  .fees-card__sub { font-size: 17px; }
-  .fees-list li { font-size: 20px; }
-  .fees-card__note { font-size: 17px; }
-  .fees-extra summary { font-size: 18px; }
+  .fees-card h3 { font-size: 26px; }
+  .fees-card__sub { font-size: 19px; }
+  .fees-list li { font-size: 22px; }
+  .fees-card__note { font-size: 19px; }
+  .fees-extra summary { font-size: 20px; }
 
   /* Pet / Parking */
-  .policy-card h3 { font-size: 27px; }
-  .policy-card__list li { font-size: 20px; }
-  .policy-card__note { font-size: 17px; }
-  .policy-card__intro { font-size: 19px; line-height: 1.55; }
-  .policy-card__nearby h4 { font-size: 17px; }
+  .policy-card h3 { font-size: 30px; }
+  .policy-card__list li { font-size: 22px; }
+  .policy-card__note { font-size: 19px; }
+  .policy-card__intro { font-size: 21px; line-height: 1.55; }
+  .policy-card__nearby h4 { font-size: 19px; }
 
   /* FAQs */
-  .faqs-section__sub { font-size: 19px; }
-  .faq summary { font-size: 22px; padding: 22px 22px; }
-  .faq p { font-size: 19px; padding: 0 22px 22px; line-height: 1.65; }
+  .faqs-section__sub { font-size: 21px; }
+  .faq summary { font-size: 24px; padding: 24px 24px; }
+  .faq p { font-size: 21px; padding: 0 24px 24px; line-height: 1.65; }
 
   /* Amenities gallery */
-  .gallery-item figcaption { font-size: 17px; }
+  .gallery-item figcaption { font-size: 19px; }
 
   /* Final CTA */
   .final-cta p,
-  .final-cta__sub { font-size: 20px; }
+  .final-cta__sub { font-size: 22px; }
 
   /* Buttons */
-  .btn--lg { font-size: 17px; padding: 16px 26px; }
-  .btn--sm { font-size: 16px; padding: 11px 20px; }
+  .btn--lg { font-size: 19px; padding: 18px 28px; }
+  .btn--sm { font-size: 18px; padding: 12px 22px; }
+  .btn--contact { font-size: 19px; }
+
+  /* Floating Contact pill */
+  .fab-contact__text { font-size: 18px; }
 
   /* Footer */
-  .landing-footer { font-size: 19px; gap: 32px; padding: 44px 22px 28px; }
-  .landing-footer__col strong { font-size: 22px; margin-bottom: 10px; }
+  .landing-footer { font-size: 21px; gap: 32px; padding: 48px 24px 32px; }
+  .landing-footer__col strong { font-size: 25px; margin-bottom: 12px; }
   .landing-footer__col p,
-  .landing-footer__col a { font-size: 19px; line-height: 1.7; }
-  .eho-badge { font-size: 14px; padding: 8px 14px; }
-  .landing-footer__legal { font-size: 16px; }
-  .landing-footer__legal a { font-size: 16px; }
-  .landing-footer__copy { font-size: 15px; }
+  .landing-footer__col a { font-size: 21px; line-height: 1.7; }
+  .eho-badge { font-size: 15px; padding: 9px 15px; }
+  .landing-footer__legal { font-size: 18px; }
+  .landing-footer__legal a { font-size: 18px; }
+  .landing-footer__copy { font-size: 17px; }
 }
