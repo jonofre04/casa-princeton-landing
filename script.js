@@ -163,15 +163,16 @@ document.addEventListener('click', (e) => {
   const link = e.target.closest('a[data-wa-source]');
   if (!link) return;
   const source = link.dataset.waSource || 'unknown';
+  const medium = link.protocol === 'tel:' ? 'tel' : 'sms';
   if (window.gtag) {
     gtag('event', 'click_contact', {
       source: source,
-      medium: 'sms',
+      medium: medium,
       transport_type: 'beacon'
     });
   }
   if (window.fbq) {
-    fbq('track', 'Contact', { source: source, medium: 'sms' });
+    fbq('track', 'Contact', { source: source, medium: medium });
   }
 });
 
@@ -259,7 +260,7 @@ const I18N_ES = {
   "— Now Leasing": "— Ahora alquilando",
   "1 BR from": "1 DOR desde",
   "2 BR from": "2 DOR desde",
-  "8 weeks free rent — Lease by May 31st. Tours available daily.": "8 semanas de renta gratis — firma antes del 31 de mayo. Tours disponibles todos los días.",
+  "8 weeks free rent — Lease by May 31st. Tour by appointment — text us and we'll book you in 5 minutes.": "8 semanas de renta gratis — firma antes del 31 de mayo. Tour con cita previa — escríbenos y te agendamos en 5 minutos.",
   "/mo": "/mes",
 
   // Units (simplified to 2 generic cards)
@@ -324,7 +325,7 @@ const I18N_ES = {
 
   // Pet & parking policy
   "Pet & parking policy.": "Política de mascotas y estacionamiento.",
-  "Pet-friendly community": "Comunidad pet-friendly",
+  "Pet-friendly community & dog-friendly grounds": "Comunidad pet-friendly y áreas para perros",
   "Maximum pets": "Máximo de mascotas",
   "2 per home": "2 por hogar",
   "Each additional animal": "Cada animal adicional",
@@ -351,9 +352,9 @@ const I18N_ES = {
   "Frequently asked.": "Preguntas frecuentes.",
   "Don't see your question? Tap Contact Us — we reply within minutes.": "¿No ves tu pregunta? Toca Contáctanos — respondemos en minutos.",
   "What floor plans does Casa Princeton offer?": "¿Qué planos ofrece Casa Princeton?",
-  "We have One Bedroom, Two Bedroom and Three Bedroom apartments. Click": "Tenemos apartamentos de 1, 2 y 3 dormitorios. Haz clic",
+  "We currently offer One Bedroom (from $1,845/mo) and Two Bedroom (from $1,995/mo) apartments. Click": "Actualmente ofrecemos apartamentos de 1 dormitorio (desde $1,845/mes) y de 2 dormitorios (desde $1,995/mes). Haz clic",
   "here": "aquí",
-  "to view our plans.": "para ver nuestros planos.",
+  "to view floor plans.": "para ver los planos.",
   "What are the starting prices on One Bedroom apartments?": "¿Cuál es el precio inicial de los apartamentos de 1 dormitorio?",
   "Our One Bedroom starts at": "Nuestro 1 Dormitorio comienza en",
   "base rent (12-month lease). Estimated total monthly cost around $1,980 — base rent plus mandatory monthly fees (trash $20, water/sewer $55, 1 GB internet $60). Fees billed monthly in addition to rent.": "renta base (contrato de 12 meses). Costo mensual estimado total alrededor de $1,980 — renta base más cuotas mensuales obligatorias (basura $20, agua/alcantarillado $55, internet 1 GB $60). Las cuotas se facturan mensualmente además de la renta.",
@@ -383,7 +384,8 @@ const I18N_ES = {
   "Clubhouse lobby": "Lobby clubhouse",
   "Lounge": "Lounge",
   "Resident lounge": "Lounge para residentes",
-  "Outdoor lounge": "Lounge al aire libre",
+  "Outdoor lounge & BBQ area": "Lounge al aire libre y zona de BBQ",
+  "Resort-style pool": "Piscina estilo resort",
   "Sunlit living spaces": "Espacios iluminados",
   "Modern kitchens": "Cocinas modernas",
   "Sunset views": "Vistas al atardecer",
@@ -412,7 +414,7 @@ const I18N_ES = {
 
   // Final CTA
   "Ready to see it?": "¿Listo para verlo?",
-  "Tour available daily.": "Tours disponibles todos los días.",
+  "Tour by appointment — usually same-day.": "Tour con cita previa — generalmente el mismo día.",
   "8 weeks free rent — Lease by May 31st.": "8 semanas de renta gratis — firma antes del 31 de mayo.",
 
   // Footer
@@ -422,6 +424,23 @@ const I18N_ES = {
   "Privacy": "Privacidad",
   "Terms": "Términos",
   "Fair Housing": "Vivienda Justa",
+  "Sun 12 PM – 5 PM": "Dom 12 PM – 5 PM",
+  "Do Not Sell or Share My Personal Information": "No vender ni compartir mi información personal",
+
+  // H2 availability
+  "3 available": "3 disponibles",
+  "5 available": "5 disponibles",
+
+  // H6 trust strip
+  "Why renters choose Casa Princeton": "Por qué los inquilinos eligen Casa Princeton",
+  "Professionally managed": "Gestión profesional",
+  "Act-aligned community": "Comunidad alineada con la Ley",
+  "2026 construction": "Construcción 2026",
+  "Brand-new": "Estreno",
+  "Live Local": "Live Local",
+
+  // H14 tap-to-call
+  "or call": "o llama al",
 
   // Skip link
   "Skip to main content": "Saltar al contenido principal"

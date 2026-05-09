@@ -3382,6 +3382,42 @@ a:focus-visible {
   .lang-toggle { padding: 6px 10px; font-size: 11px; }
 }
 
+/* H2: availability chip on unit-row */
+.unit-row__avail {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1F7A3A;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.unit-row__avail-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #2BB85A;
+  box-shadow: 0 0 0 4px rgba(43, 184, 90, 0.18);
+  flex-shrink: 0;
+}
+
+/* H14: hero tap-to-call fallback */
+.hero__phone-fallback {
+  margin-top: 14px;
+  font-size: 15px;
+  color: var(--cream);
+  opacity: 0.92;
+}
+.hero__phone-fallback a {
+  color: var(--cream);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.hero__phone-or {
+  opacity: 0.75;
+  margin-right: 4px;
+}
+
 /* ════════════════════════════════════════════════════════
    Mobile readability bump — keeps body copy comfortably
    sized on phones without changing component layouts.

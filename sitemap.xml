@@ -30,4 +30,10 @@
     <changefreq>yearly</changefreq>
     <priority>0.30</priority>
   </url>
+  <url>
+    <loc>https://www.casaprincetonflorida.com/do-not-sell.html</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.30</priority>
+  </url>
 </urlset>

@@ -35,6 +35,10 @@
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
 <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 
+<link rel="preload" as="image" href="assets/img/hero.jpg" fetchpriority="high" />
+<link rel="preload" as="font" href="assets/fonts/FuturaPTCondBook.otf" type="font/otf" crossorigin="anonymous" />
+<link rel="preload" as="font" href="assets/fonts/FuturaPTCondBold.otf" type="font/otf" crossorigin="anonymous" />
+
 <link rel="stylesheet" href="styles.css" />
 
 <!-- TODO[CLIENT]: Replace G-XXXXXXXXXX with your Google Analytics 4 Measurement ID -->
@@ -198,11 +202,12 @@
         <span class="hero__price-value">$1,995<small>/mo</small></span>
       </div>
     </div>
-    <p class="hero__sub">8 weeks free rent — Lease by May 31st. Tours available daily.</p>
+    <p class="hero__sub">8 weeks free rent — Lease by May 31st. Tour by appointment — text us and we'll book you in 5 minutes.</p>
     <a href="sms:+17869773672?body=Hi%2C%20I%27m%20interested%20in%20Casa%20Princeton" class="btn btn--contact btn--lg" data-wa-source="hero">
       <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="icon-chat"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg>
       <span>Contact Us</span>
     </a>
+    <p class="hero__phone-fallback"><span class="hero__phone-or">or call</span> <a href="tel:+17869773672" data-wa-source="hero-tel">(786) 977-3672</a></p>
   </div>
 
   <div class="hero-landing__dots" role="tablist" aria-label="Choose slide">
@@ -213,17 +218,31 @@
   </div>
 </section>
 
+<!-- ════════ 1.5. Trust strip ════════ -->
+<section class="social-proof" id="trust-strip" aria-label="Why renters choose Casa Princeton">
+  <div class="container">
+    <div class="social-proof__grid">
+      <div class="social-proof__item"><strong>ZRS</strong><span>Professionally managed</span></div>
+      <div class="social-proof__item"><strong>Live Local</strong><span>Act-aligned community</span></div>
+      <div class="social-proof__item"><strong>EHO</strong><span>Equal Housing Opportunity</span></div>
+      <div class="social-proof__item"><strong>Brand-new</strong><span>2026 construction</span></div>
+    </div>
+  </div>
+</section>
+
 <!-- ════════ 2. Units price ladder ════════ -->
 <section class="units-section" id="units">
   <div class="units-section__inner">
     <h2>Find your home.</h2>
     <p class="units-section__sub">Tap Contact Us on the unit you want — we reply within minutes.</p>
+    <!-- TODO[LEASING]: refresh data-updated + count weekly -->
     <ul class="unit-ladder">
 
       <li class="unit-row">
         <span class="unit-row__br">1 BR</span>
         <span class="unit-row__name">1 Bedroom <small>· A1</small></span>
         <span class="unit-row__sqft">from 616 sqft</span>
+        <span class="unit-row__avail" data-updated="2026-05-09"><span class="unit-row__avail-dot" aria-hidden="true"></span>3 available</span>
         <span class="unit-row__price">From <strong>$1,845</strong>/mo</span>
         <a href="sms:+17869773672?body=Hi%2C%20I%27m%20interested%20in%20a%201BR%20at%20Casa%20Princeton" class="btn btn--contact btn--sm" data-wa-source="unit-1br">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="icon-chat"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg>
@@ -236,6 +255,7 @@
         <span class="unit-row__br">2 BR</span>
         <span class="unit-row__name">2 Bedrooms <small>· B2-P</small></span>
         <span class="unit-row__sqft">from 834 sqft</span>
+        <span class="unit-row__avail" data-updated="2026-05-09"><span class="unit-row__avail-dot" aria-hidden="true"></span>5 available</span>
         <span class="unit-row__price">From <strong>$1,995</strong>/mo</span>
         <a href="sms:+17869773672?body=Hi%2C%20I%27m%20interested%20in%20a%202BR%20at%20Casa%20Princeton" class="btn btn--contact btn--sm" data-wa-source="unit-2br">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="icon-chat"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg>
@@ -260,6 +280,10 @@
     <p class="amenities-landing__sub">Designed for everyday comfort and weekend living.</p>
     <div class="gallery-grid">
       <figure class="gallery-item gallery-item--wide">
+        <img src="assets/img/hero.jpg" alt="Resort-style pool with cabanas" loading="lazy" />
+        <figcaption>Resort-style pool</figcaption>
+      </figure>
+      <figure class="gallery-item">
         <img src="assets/img/gallery/exterior-day.jpg" alt="Casa Princeton building exterior" loading="lazy" />
         <figcaption>Modern exteriors</figcaption>
       </figure>
@@ -277,7 +301,7 @@
       </figure>
       <figure class="gallery-item">
         <img src="assets/img/gallery/outdoor-lounge.jpg" alt="Outdoor covered lounge" loading="lazy" />
-        <figcaption>Outdoor lounge</figcaption>
+        <figcaption>Outdoor lounge & BBQ area</figcaption>
       </figure>
       <figure class="gallery-item gallery-item--wide">
         <img src="assets/img/gallery/apartment-living.jpg" alt="Apartment living area" loading="lazy" />
@@ -386,7 +410,7 @@
       <!-- Pet card -->
       <article class="policy-card policy-card--pet">
         <img src="assets/img/dog-mascot.png" alt="Casa Princeton mascot — French Bulldog with sunglasses" class="policy-card__mascot" loading="lazy" />
-        <h3>Pet-friendly community</h3>
+        <h3>Pet-friendly community & dog-friendly grounds</h3>
         <ul class="policy-card__list">
           <li><span>Maximum pets</span><strong>2 per home</strong></li>
           <li><span>Each additional animal</span><strong>$250</strong></li>
@@ -443,6 +467,9 @@
     <iframe
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3599.9843991211005!2d-80.38750652482462!3d25.538896577492654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9c34bae94134f%3A0x6eb9f6a93d2fc4d2!2s12835%20SW%20246%20Terrace%2C%20Homestead%2C%20FL%2033032%2C%20EE.%20UU.!5e0!3m2!1ses!2ses!4v1777834802974!5m2!1ses!2ses"
       title="Casa Princeton — 12835 SW 246 Terr, Homestead, FL 33032"
+      width="100%"
+      height="420"
+      style="aspect-ratio:16/10;border:0;display:block;"
       allowfullscreen=""
       loading="lazy"
       referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -458,7 +485,7 @@
     <div class="faqs-list">
       <details class="faq">
         <summary>What floor plans does Casa Princeton offer?</summary>
-        <p>We have One Bedroom, Two Bedroom and Three Bedroom apartments. Click <a href="#units">here</a> to view our plans.</p>
+        <p>We currently offer One Bedroom (from $1,845/mo) and Two Bedroom (from $1,995/mo) apartments. Click <a href="#units">here</a> to view floor plans.</p>
       </details>
 
       <details class="faq">
@@ -513,7 +540,7 @@
 <section class="final-cta">
   <div class="final-cta__inner">
     <h2>Ready to see it?</h2>
-    <p>Tour available daily. <strong>8 weeks free rent — Lease by May 31st.</strong></p>
+    <p>Tour by appointment — usually same-day. <strong>8 weeks free rent — Lease by May 31st.</strong></p>
     <a href="sms:+17869773672?body=Hi%2C%20I%27d%20like%20to%20schedule%20a%20tour%20at%20Casa%20Princeton" class="btn btn--contact btn--lg" data-wa-source="final-cta">
       <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="icon-chat"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg>
       <span>Contact Us</span>
@@ -531,12 +558,12 @@
   </div>
   <div class="landing-footer__col">
     <strong>Leasing</strong>
-    <p><a href="tel:+17869773672">(786) 977-3672</a><br/>Mon–Fri 9 AM – 6 PM<br/>Sat 10 AM – 5 PM</p>
+    <p><a href="tel:+17869773672">(786) 977-3672</a><br/>Mon–Fri 9 AM – 6 PM<br/>Sat 10 AM – 5 PM<br/>Sun 12 PM – 5 PM</p>
   </div>
   <div class="landing-footer__col">
     <span class="eho-badge" aria-label="Equal Housing Opportunity">⌂ Equal Housing Opportunity</span>
     <p class="landing-footer__legal">
-      <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="fair-housing.html">Fair Housing</a>
+      <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="fair-housing.html">Fair Housing</a> · <a href="do-not-sell.html">Do Not Sell or Share My Personal Information</a>
     </p>
     <p class="landing-footer__copy">© <span id="year"></span> Casa Princeton Apartments</p>
   </div>
