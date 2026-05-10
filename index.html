@@ -35,7 +35,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
 <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 
-<link rel="preload" as="image" href="assets/img/hero.jpg" fetchpriority="high" />
+<link rel="preload" as="image" href="assets/img/hero.webp" type="image/webp" fetchpriority="high" />
 <link rel="preload" as="font" href="assets/fonts/FuturaPTCondBook.otf" type="font/otf" crossorigin="anonymous" />
 <link rel="preload" as="font" href="assets/fonts/FuturaPTCondBold.otf" type="font/otf" crossorigin="anonymous" />
 
@@ -175,16 +175,28 @@
 <section class="hero-landing" id="hero">
   <div class="hero-landing__bg" id="heroCarousel" role="region" aria-roledescription="carousel" aria-label="Casa Princeton photo gallery">
     <figure class="hero-landing__slide is-active" aria-roledescription="slide" aria-label="1 of 4">
-      <img src="assets/img/hero.jpg" alt="Casa Princeton resort-style pool with the building behind" loading="eager" fetchpriority="high" />
+      <picture>
+        <source srcset="assets/img/hero.webp" type="image/webp" />
+        <img src="assets/img/hero.jpg" alt="Casa Princeton resort-style pool with the building behind" loading="eager" fetchpriority="high" />
+      </picture>
     </figure>
     <figure class="hero-landing__slide" aria-roledescription="slide" aria-label="2 of 4" aria-hidden="true">
-      <img src="assets/img/gallery/lobby-clubhouse.jpg" alt="Modern clubhouse lobby" loading="lazy" />
+      <picture>
+        <source srcset="assets/img/gallery/lobby-clubhouse.webp" type="image/webp" />
+        <img src="assets/img/gallery/lobby-clubhouse.jpg" alt="Modern clubhouse lobby" loading="lazy" />
+      </picture>
     </figure>
     <figure class="hero-landing__slide" aria-roledescription="slide" aria-label="3 of 4" aria-hidden="true">
-      <img src="assets/img/gallery/apartment-living.jpg" alt="Sunlit living area in a Casa Princeton apartment" loading="lazy" />
+      <picture>
+        <source srcset="assets/img/gallery/apartment-living.webp" type="image/webp" />
+        <img src="assets/img/gallery/apartment-living.jpg" alt="Sunlit living area in a Casa Princeton apartment" loading="lazy" />
+      </picture>
     </figure>
     <figure class="hero-landing__slide" aria-roledescription="slide" aria-label="4 of 4" aria-hidden="true">
-      <img src="assets/img/gallery/outdoor-lounge.jpg" alt="Outdoor covered lounge with seating" loading="lazy" />
+      <picture>
+        <source srcset="assets/img/gallery/outdoor-lounge.webp" type="image/webp" />
+        <img src="assets/img/gallery/outdoor-lounge.jpg" alt="Outdoor covered lounge with seating" loading="lazy" />
+      </picture>
     </figure>
   </div>
 
@@ -268,55 +280,94 @@
     <p class="amenities-landing__sub">Designed for everyday comfort and weekend living.</p>
     <div class="gallery-grid">
       <figure class="gallery-item gallery-item--wide">
-        <img src="assets/img/hero.jpg" alt="Resort-style pool with cabanas" loading="lazy" />
+        <picture>
+          <source srcset="assets/img/hero.webp" type="image/webp" />
+          <img src="assets/img/hero.jpg" alt="Resort-style pool with cabanas" loading="lazy" />
+        </picture>
         <figcaption>Resort-style pool</figcaption>
       </figure>
       <figure class="gallery-item">
-        <img src="assets/img/gallery/exterior-day.jpg" alt="Casa Princeton building exterior" loading="lazy" />
+        <picture>
+          <source srcset="assets/img/gallery/exterior-day.webp" type="image/webp" />
+          <img src="assets/img/gallery/exterior-day.jpg" alt="Casa Princeton building exterior" loading="lazy" />
+        </picture>
         <figcaption>Modern exteriors</figcaption>
       </figure>
       <figure class="gallery-item">
-        <img src="assets/img/gallery/lobby-clubhouse.jpg" alt="Lobby clubhouse" loading="lazy" />
+        <picture>
+          <source srcset="assets/img/gallery/lobby-clubhouse.webp" type="image/webp" />
+          <img src="assets/img/gallery/lobby-clubhouse.jpg" alt="Lobby clubhouse" loading="lazy" />
+        </picture>
         <figcaption>Clubhouse lobby</figcaption>
       </figure>
       <figure class="gallery-item">
-        <img src="assets/img/gallery/lobby-lounge.jpg" alt="Lounge area" loading="lazy" />
+        <picture>
+          <source srcset="assets/img/gallery/lobby-lounge.webp" type="image/webp" />
+          <img src="assets/img/gallery/lobby-lounge.jpg" alt="Lounge area" loading="lazy" />
+        </picture>
         <figcaption>Lounge</figcaption>
       </figure>
       <figure class="gallery-item">
-        <img src="assets/img/gallery/resident-lounge.jpg" alt="Resident lounge" loading="lazy" />
+        <picture>
+          <source srcset="assets/img/gallery/resident-lounge.webp" type="image/webp" />
+          <img src="assets/img/gallery/resident-lounge.jpg" alt="Resident lounge" loading="lazy" />
+        </picture>
         <figcaption>Resident lounge</figcaption>
       </figure>
       <figure class="gallery-item">
-        <img src="assets/img/gallery/outdoor-lounge.jpg" alt="Outdoor covered lounge" loading="lazy" />
+        <picture>
+          <source srcset="assets/img/gallery/outdoor-lounge.webp" type="image/webp" />
+          <img src="assets/img/gallery/outdoor-lounge.jpg" alt="Outdoor covered lounge" loading="lazy" />
+        </picture>
         <figcaption>Outdoor lounge & BBQ area</figcaption>
       </figure>
       <figure class="gallery-item gallery-item--wide">
-        <img src="assets/img/gallery/apartment-living.jpg" alt="Apartment living area" loading="lazy" />
+        <picture>
+          <source srcset="assets/img/gallery/apartment-living.webp" type="image/webp" />
+          <img src="assets/img/gallery/apartment-living.jpg" alt="Apartment living area" loading="lazy" />
+        </picture>
         <figcaption>Sunlit living spaces</figcaption>
       </figure>
       <figure class="gallery-item">
-        <img src="assets/img/gallery/kitchen-modern.jpg" alt="Modern kitchen" loading="lazy" />
+        <picture>
+          <source srcset="assets/img/gallery/kitchen-modern.webp" type="image/webp" />
+          <img src="assets/img/gallery/kitchen-modern.jpg" alt="Modern kitchen" loading="lazy" />
+        </picture>
         <figcaption>Modern kitchens</figcaption>
       </figure>
       <figure class="gallery-item">
-        <img src="assets/img/gallery/kitchen-sunset.jpg" alt="Kitchen with sunset view" loading="lazy" />
+        <picture>
+          <source srcset="assets/img/gallery/kitchen-sunset.webp" type="image/webp" />
+          <img src="assets/img/gallery/kitchen-sunset.jpg" alt="Kitchen with sunset view" loading="lazy" />
+        </picture>
         <figcaption>Sunset views</figcaption>
       </figure>
       <figure class="gallery-item">
-        <img src="assets/img/gallery/bedroom-master.jpg" alt="Master bedroom" loading="lazy" />
+        <picture>
+          <source srcset="assets/img/gallery/bedroom-master.webp" type="image/webp" />
+          <img src="assets/img/gallery/bedroom-master.jpg" alt="Master bedroom" loading="lazy" />
+        </picture>
         <figcaption>Spacious bedrooms</figcaption>
       </figure>
       <figure class="gallery-item">
-        <img src="assets/img/gallery/bathroom.jpg" alt="Modern bathroom" loading="lazy" />
+        <picture>
+          <source srcset="assets/img/gallery/bathroom.webp" type="image/webp" />
+          <img src="assets/img/gallery/bathroom.jpg" alt="Modern bathroom" loading="lazy" />
+        </picture>
         <figcaption>Designer bathrooms</figcaption>
       </figure>
       <figure class="gallery-item">
-        <img src="assets/img/gallery/gym-training.jpg" alt="24/7 fitness center" loading="lazy" />
+        <picture>
+          <source srcset="assets/img/gallery/gym-training.webp" type="image/webp" />
+          <img src="assets/img/gallery/gym-training.jpg" alt="24/7 fitness center" loading="lazy" />
+        </picture>
         <figcaption>24/7 fitness center</figcaption>
       </figure>
       <figure class="gallery-item">
-        <img src="assets/img/gallery/mailroom.jpg" alt="Resident mailroom" loading="lazy" />
+        <picture>
+          <source srcset="assets/img/gallery/mailroom.webp" type="image/webp" />
+          <img src="assets/img/gallery/mailroom.jpg" alt="Resident mailroom" loading="lazy" />
+        </picture>
         <figcaption>Resident mailroom</figcaption>
       </figure>
     </div>
@@ -441,7 +492,10 @@
     <h2>The community.</h2>
     <p class="community-section__sub">Three residential blocks, central courtyard, and on-site amenities — all within a gated, landscaped community.</p>
     <figure class="community-section__figure">
-      <img src="assets/img/site-plan.jpg" alt="Casa Princeton site plan — Phase II layout showing residential blocks, courtyard, parking, and amenities" loading="lazy" />
+      <picture>
+        <source srcset="assets/img/site-plan.webp" type="image/webp" />
+        <img src="assets/img/site-plan.jpg" alt="Casa Princeton site plan — Phase II layout showing residential blocks, courtyard, parking, and amenities" loading="lazy" />
+      </picture>
       <figcaption>Site plan · Phase II</figcaption>
     </figure>
   </div>

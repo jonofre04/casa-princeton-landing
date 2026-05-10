@@ -123,7 +123,8 @@ if (year) year.textContent = new Date().getFullYear();
   let lastFocus = null;
 
   function open(planSlug, unitName, triggerEl) {
-    img.src = `assets/img/floorplans/${planSlug}.jpg`;
+    img.onerror = () => { img.onerror = null; img.src = `assets/img/floorplans/${planSlug}.jpg`; };
+    img.src = `assets/img/floorplans/${planSlug}.webp`;
     img.alt = `${unitName} floor plan`;
     title.textContent = unitName;
     lastFocus = triggerEl || document.activeElement;
