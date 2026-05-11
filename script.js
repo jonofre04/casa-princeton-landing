@@ -37,6 +37,33 @@ if (year) year.textContent = new Date().getFullYear();
 })();
 
 // ══════════════════════════════════════════════
+// Mobile hamburger menu — toggle nav__links on legal pages
+// ══════════════════════════════════════════════
+(function setupNavToggle() {
+  const toggle = document.getElementById('navToggle');
+  const links = document.querySelector('.nav__links');
+  if (!toggle || !links) return;
+  toggle.setAttribute('aria-expanded', 'false');
+  toggle.addEventListener('click', () => {
+    const isOpen = links.classList.toggle('is-open');
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  links.addEventListener('click', (e) => {
+    if (e.target.tagName === 'A') {
+      links.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && links.classList.contains('is-open')) {
+      links.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.focus();
+    }
+  });
+})();
+
+// ══════════════════════════════════════════════
 // Hero photo carousel — auto-rotate, dots, swipe, keyboard
 // ══════════════════════════════════════════════
 (function setupHeroCarousel() {
