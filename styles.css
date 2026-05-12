@@ -2589,6 +2589,7 @@ a:focus-visible {
   .unit-row__price { grid-column: 3; grid-row: 3; text-align: right; }
   .unit-row .btn--contact { grid-column: 1 / -1; grid-row: 4; justify-content: center; margin-top: 8px; }
   .unit-row__plan-link { grid-column: 1 / -1; grid-row: 5; text-align: center; }
+  .unit-row__includes { grid-column: 1 / -1; grid-row: 6; }
   .unit-row__badge { position: static; align-self: start; margin-bottom: 8px; grid-column: 1 / -1; grid-row: 0; width: max-content; }
 }
 
@@ -3413,6 +3414,22 @@ a:focus-visible {
   background: #2BB85A;
   box-shadow: 0 0 0 4px rgba(43, 184, 90, 0.18);
   flex-shrink: 0;
+}
+
+/* "Including: 1 GB internet, trash & water fee" — ZRS-style ribbon */
+.unit-row__includes {
+  background: var(--navy);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  padding: 8px 14px;
+  border-radius: 6px;
+  text-align: center;
+  line-height: 1.3;
+  grid-column: 1 / -1;
+  margin-top: 4px;
 }
 
 /* H14: hero tap-to-call fallback */
