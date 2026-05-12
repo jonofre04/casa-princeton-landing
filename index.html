@@ -233,40 +233,151 @@
 <!-- ════════ 2. Units price ladder ════════ -->
 <section class="units-section" id="units">
   <div class="units-section__inner">
-    <h2>Find your home.</h2>
-    <p class="units-section__sub">Tap Contact Us on the unit you want — we reply within minutes.</p>
-    <!-- TODO[LEASING]: refresh data-updated + count weekly -->
-    <ul class="unit-ladder">
+    <h2 class="visually-hidden">Find your home.</h2>
 
-      <li class="unit-row">
-        <span class="unit-row__br">1 BR</span>
-        <span class="unit-row__name">1 Bedroom</span>
-        <span class="unit-row__sqft">from 554 to 739 sqft</span>
-        <span class="unit-row__avail" data-updated="2026-05-09"><span class="unit-row__avail-dot" aria-hidden="true"></span>5 available</span>
-        <span class="unit-row__price">From <strong>$1,945</strong>/mo</span>
-        <a href="sms:+17869773672?body=Hi%2C%20I%27m%20interested%20in%20a%201BR%20at%20Casa%20Princeton" class="btn btn--contact btn--sm" data-wa-source="unit-1br">
+    <!-- Top trust strip -->
+    <div class="units-trust-strip">
+      <div class="units-trust-strip__item">
+        <span class="units-trust-strip__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 9h2M13 9h2M9 13h2M13 13h2M9 17h2M13 17h2"/></svg>
+        </span>
+        <div class="units-trust-strip__text">
+          <strong>554 — 965 sqft</strong>
+          <span>Floor plans</span>
+        </div>
+      </div>
+      <div class="units-trust-strip__item">
+        <span class="units-trust-strip__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.95 0"/><circle cx="12" cy="20" r="1" fill="currentColor"/></svg>
+        </span>
+        <div class="units-trust-strip__text">
+          <strong>1 GB Internet, Trash &amp; Water</strong>
+          <span>Included</span>
+        </div>
+      </div>
+      <div class="units-trust-strip__item">
+        <span class="units-trust-strip__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </span>
+        <div class="units-trust-strip__text">
+          <strong>Princeton, FL</strong>
+          <span>Explore area</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="units-section__sub">Tap Contact Us on the unit you want — we reply within minutes.</p>
+
+    <!-- TODO[LEASING]: refresh data-updated + count weekly -->
+    <ul class="unit-cards">
+
+      <li class="unit-card">
+        <div class="unit-card__top">
+          <span class="unit-card__avail" data-updated="2026-05-09"><span class="unit-card__avail-dot" aria-hidden="true"></span>5 available</span>
+        </div>
+        <div class="unit-card__body">
+          <div class="unit-card__left">
+            <div class="unit-card__head">
+              <span class="unit-card__br">1 BR</span>
+              <div class="unit-card__name">
+                <strong>1 Bedroom</strong>
+                <span>554 — 739 sqft</span>
+              </div>
+            </div>
+            <div class="unit-card__price-block">
+              <span class="unit-card__price-label">Starting at</span>
+              <span class="unit-card__price"><strong>$1,945</strong><small>/mo</small></span>
+              <span class="unit-card__price-note">Transparent fees disclosed below</span>
+            </div>
+          </div>
+          <ul class="unit-card__perks">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="8 12 11 15 16 9"/></svg>Brand new 2026 apartments</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="8 12 11 15 16 9"/></svg>1 GB High-Speed Internet <span class="unit-card__perks-note">(included)</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="8 12 11 15 16 9"/></svg>Trash &amp; Water included</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="8 12 11 15 16 9"/></svg>Resort-style amenities</li>
+            <li class="is-highlight"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>8 weeks free rent</li>
+          </ul>
+        </div>
+        <a href="sms:+17869773672?body=Hi%2C%20I%27m%20interested%20in%20a%201BR%20at%20Casa%20Princeton" class="btn btn--contact unit-card__cta" data-wa-source="unit-1br">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="icon-chat"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg>
           Contact Us
         </a>
-        <button type="button" class="unit-row__plan-link" data-floorplan="cypress-1br" data-unit-name="1 Bedroom — Floor plan" aria-label="See 1 Bedroom floor plan">See floor plan</button>
-        <span class="unit-row__includes">Including: 1 GB high-speed internet, trash &amp; water fee</span>
+        <button type="button" class="unit-card__plan-btn" data-floorplan="cypress-1br" data-unit-name="1 Bedroom — Floor plan" aria-label="See 1 Bedroom floor plan">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+          See floor plan
+        </button>
       </li>
 
-      <li class="unit-row">
-        <span class="unit-row__br">2 BR</span>
-        <span class="unit-row__name">2 Bedrooms</span>
-        <span class="unit-row__sqft">from 798 to 965 sqft</span>
-        <span class="unit-row__avail" data-updated="2026-05-09"><span class="unit-row__avail-dot" aria-hidden="true"></span>3 available</span>
-        <span class="unit-row__price">From <strong>$2,225</strong>/mo</span>
-        <a href="sms:+17869773672?body=Hi%2C%20I%27m%20interested%20in%20a%202BR%20at%20Casa%20Princeton" class="btn btn--contact btn--sm" data-wa-source="unit-2br">
+      <li class="unit-card">
+        <div class="unit-card__top">
+          <span class="unit-card__avail" data-updated="2026-05-09"><span class="unit-card__avail-dot" aria-hidden="true"></span>3 available</span>
+        </div>
+        <div class="unit-card__body">
+          <div class="unit-card__left">
+            <div class="unit-card__head">
+              <span class="unit-card__br">2 BR</span>
+              <div class="unit-card__name">
+                <strong>2 Bedrooms</strong>
+                <span>798 — 965 sqft</span>
+              </div>
+            </div>
+            <div class="unit-card__price-block">
+              <span class="unit-card__price-label">Starting at</span>
+              <span class="unit-card__price"><strong>$2,225</strong><small>/mo</small></span>
+              <span class="unit-card__price-note">Transparent fees disclosed below</span>
+            </div>
+          </div>
+          <ul class="unit-card__perks">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="8 12 11 15 16 9"/></svg>Brand new 2026 apartments</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="8 12 11 15 16 9"/></svg>1 GB High-Speed Internet <span class="unit-card__perks-note">(included)</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="8 12 11 15 16 9"/></svg>Trash &amp; Water included</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="8 12 11 15 16 9"/></svg>Resort-style amenities</li>
+            <li class="is-highlight"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>8 weeks free rent</li>
+          </ul>
+        </div>
+        <a href="sms:+17869773672?body=Hi%2C%20I%27m%20interested%20in%20a%202BR%20at%20Casa%20Princeton" class="btn btn--contact unit-card__cta" data-wa-source="unit-2br">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="icon-chat"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg>
           Contact Us
         </a>
-        <button type="button" class="unit-row__plan-link" data-floorplan="magnolia-2br" data-unit-name="2 Bedrooms — Floor plan" aria-label="See 2 Bedroom floor plan">See floor plan</button>
-        <span class="unit-row__includes">Including: 1 GB high-speed internet, trash &amp; water fee</span>
+        <button type="button" class="unit-card__plan-btn" data-floorplan="magnolia-2br" data-unit-name="2 Bedrooms — Floor plan" aria-label="See 2 Bedroom floor plan">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+          See floor plan
+        </button>
       </li>
 
     </ul>
+
+    <!-- Bottom perks strip -->
+    <div class="units-perks-strip">
+      <div class="units-perks-strip__item">
+        <span class="units-perks-strip__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v12M9 9h4.5a2 2 0 0 1 0 4H10a2 2 0 0 0 0 4h5"/></svg>
+        </span>
+        <div class="units-perks-strip__text">
+          <strong>Up to 8 weeks free rent</strong>
+          <span>Limited time offer</span>
+        </div>
+      </div>
+      <div class="units-perks-strip__item">
+        <span class="units-perks-strip__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="8 12 11 15 16 9"/></svg>
+        </span>
+        <div class="units-perks-strip__text">
+          <strong>Flexible lease terms</strong>
+          <span>12+ month options</span>
+        </div>
+      </div>
+      <div class="units-perks-strip__item">
+        <span class="units-perks-strip__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="8 12 11 15 16 9"/></svg>
+        </span>
+        <div class="units-perks-strip__text">
+          <strong>Hassle-free living</strong>
+          <span>All essentials included</span>
+        </div>
+      </div>
+    </div>
+
     <p class="units-section__more">
       <a href="sms:+17869773672?body=Hi%2C%20I%27d%20like%20to%20see%20other%20floor%20plans%20at%20Casa%20Princeton" class="units-section__more-link" data-wa-source="other-plans">
         Other floor plans available — talk with our team →
