@@ -2964,6 +2964,16 @@ a:focus-visible {
   max-width: 560px;
   text-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
 }
+.hero__sub-link {
+  color: var(--sand);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 2px;
+  white-space: nowrap;
+  transition: color 0.2s;
+}
+.hero__sub-link:hover { color: #fff; }
 @media (max-width: 960px) {
   .hero__prices { justify-content: center; margin-left: auto; margin-right: auto; }
   .hero__sub { margin-left: auto; margin-right: auto; }

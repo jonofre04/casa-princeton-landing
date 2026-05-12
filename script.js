@@ -289,6 +289,7 @@ const I18N_ES = {
   "1 BR from": "1 DOR desde",
   "2 BR from": "2 DOR desde",
   "8 weeks free rent — Lease by May 31st. Tour by appointment — text us and we'll book you in 5 minutes.": "8 semanas de renta gratis — firma antes del 31 de mayo. Tour con cita previa — escríbenos y te agendamos en 5 minutos.",
+  "Book a Tour": "Agenda tu Tour",
   "/mo": "/mes",
 
   // Units (simplified to 2 generic cards)
