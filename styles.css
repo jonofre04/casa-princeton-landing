@@ -3561,7 +3561,7 @@ a:focus-visible {
 }
 .units-trust-strip__item {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 10px;
   min-width: 0;
 }
