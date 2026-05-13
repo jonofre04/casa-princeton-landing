@@ -3600,6 +3600,9 @@ a:focus-visible {
   font-size: 13px;
   color: var(--navy);
   font-weight: 700;
+}
+.units-trust-strip__item:nth-child(1) .units-trust-strip__text strong,
+.units-trust-strip__item:nth-child(3) .units-trust-strip__text strong {
   white-space: nowrap;
 }
 .units-trust-strip__text span {
