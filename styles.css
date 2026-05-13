@@ -3446,6 +3446,9 @@ a:focus-visible {
   color: var(--cream);
   opacity: 0.92;
 }
+@media (max-width: 720px) {
+  .hero__phone-fallback { font-size: 21px; margin-top: 16px; }
+}
 .hero__phone-fallback a {
   color: var(--cream);
   font-weight: 600;
