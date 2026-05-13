@@ -3114,8 +3114,14 @@ a:focus-visible {
   gap: 14px;
 }
 .fees-list li:last-child { border-bottom: none; }
-.fees-list span { color: var(--ink-soft); }
-.fees-list strong { color: var(--navy); font-weight: 700; white-space: nowrap; }
+.fees-list span { color: var(--ink-soft); flex: 1 1 auto; min-width: 0; }
+.fees-list strong {
+  color: var(--navy);
+  font-weight: 700;
+  text-align: right;
+  flex-shrink: 0;
+  max-width: 60%;
+}
 .fees-section__note {
   text-align: center;
   font-size: 12.5px;
