@@ -3565,6 +3565,20 @@ a:focus-visible {
   gap: 10px;
   min-width: 0;
 }
+.units-trust-strip__item--link {
+  cursor: pointer;
+  border-radius: 10px;
+  padding: 4px 6px;
+  margin: -4px -6px;
+  transition: background 0.2s;
+}
+.units-trust-strip__item--link:hover {
+  background: var(--cream);
+}
+.units-trust-strip__item--link:hover .units-trust-strip__text span {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
 .units-trust-strip__icon {
   flex-shrink: 0;
   width: 36px; height: 36px;
