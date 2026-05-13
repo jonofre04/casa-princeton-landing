@@ -3473,7 +3473,7 @@ a:focus-visible {
 
   /* Hero — much bigger headline + sub on mobile */
   .hero-landing__inner h1 { font-size: clamp(36px, 9.5vw, 52px) !important; line-height: 1.1; }
-  .hero__sub { font-size: 19px !important; max-width: 100%; }
+  .hero__sub { font-size: 23px !important; max-width: 100%; line-height: 1.4; }
   .hero__price-label { font-size: 14px; letter-spacing: 1.4px; }
   .hero__price-value { font-size: 30px; }
   .hero__price-value small { font-size: 15px; }
