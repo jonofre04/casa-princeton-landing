@@ -28,7 +28,8 @@ if (year) year.textContent = new Date().getFullYear();
     closeBtn.addEventListener('click', () => {
       banner.classList.add('is-dismissed');
       try { localStorage.setItem(STORAGE_KEY, '1'); } catch (_) {}
-      if (window.gtag) gtag('event', 'concession_banner_dismissed');
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: 'concession_banner_dismissed' });
       // Remove from DOM after the slide-up transition so it doesn't take vertical space
       banner.addEventListener('transitionend', () => banner.remove(), { once: true });
       setTimeout(() => banner.remove(), 600);
@@ -159,7 +160,8 @@ if (year) year.textContent = new Date().getFullYear();
     document.body.style.overflow = 'hidden';
     const closeBtn = modal.querySelector('.floorplan-modal__close');
     if (closeBtn) closeBtn.focus();
-    if (window.gtag) gtag('event', 'view_floorplan', { plan: planSlug, unit: unitName });
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: 'view_floorplan', plan: planSlug, unit: unitName });
   }
   function close() {
     modal.hidden = true;
@@ -192,16 +194,12 @@ document.addEventListener('click', (e) => {
   if (!link) return;
   const source = link.dataset.waSource || 'unknown';
   const medium = link.protocol === 'tel:' ? 'tel' : 'sms';
-  if (window.gtag) {
-    gtag('event', 'click_contact', {
-      source: source,
-      medium: medium,
-      transport_type: 'beacon'
-    });
-  }
-  if (window.fbq) {
-    fbq('track', 'Contact', { source: source, medium: medium });
-  }
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: 'click_contact',
+    source: source,
+    medium: medium
+  });
 });
 
 // ══════════════════════════════════════════════
@@ -576,7 +574,8 @@ const I18N_ES = {
       const next = current === 'es' ? 'en' : 'es';
       window.applyLanguage(next);
       setBtnLabel(next);
-      if (window.gtag) gtag('event', 'language_toggle', { language: next });
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: 'language_toggle', language: next });
     });
   }
 
