@@ -314,6 +314,7 @@ const I18N_ES = {
   "Starting at": "Desde",
   "Transparent fees disclosed below": "Cuotas transparentes detalladas abajo",
   "Brand new 2026 apartments": "Apartamentos a estrenar 2026",
+  "Brand new 2025 apartments": "Apartamentos a estrenar 2025",
   "1 GB High-Speed Internet": "Internet de alta velocidad de 1 GB",
   "(included)": "(incluido)",
   "Trash & Water included": "Basura y agua incluidos",

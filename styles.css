@@ -3642,18 +3642,18 @@ a:focus-visible {
   flex-shrink: 0;
 }
 
-/* Card body — left (price/specs) + right (perks) */
-.unit-card__body {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-  align-items: start;
+/* Card header — BR + name on left, price block on right (same row) */
+.unit-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 18px;
 }
-.unit-card__left { display: grid; gap: 16px; }
-.unit-card__head {
+.unit-card__title {
   display: flex;
   align-items: baseline;
   gap: 14px;
+  min-width: 0;
 }
 .unit-card__br {
   font-family: var(--serif);
@@ -3662,8 +3662,14 @@ a:focus-visible {
   color: var(--navy);
   line-height: 1;
   letter-spacing: -1px;
+  flex-shrink: 0;
 }
-.unit-card__name { display: flex; flex-direction: column; line-height: 1.25; }
+.unit-card__name {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+  min-width: 0;
+}
 .unit-card__name strong {
   font-size: 17px;
   color: var(--navy);
@@ -3674,8 +3680,15 @@ a:focus-visible {
   color: var(--ink-soft);
 }
 
-/* Price block */
-.unit-card__price-block { display: flex; flex-direction: column; gap: 4px; }
+/* Price block — right-aligned, "Starting at" label above big price */
+.unit-card__price-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  gap: 2px;
+  flex-shrink: 0;
+}
 .unit-card__price-label {
   font-size: 13px;
   color: var(--ink-soft);
@@ -3684,7 +3697,6 @@ a:focus-visible {
   font-family: var(--serif);
   color: var(--navy);
   line-height: 1;
-  margin-top: 2px;
 }
 .unit-card__price strong {
   font-size: 38px;
@@ -3699,9 +3711,10 @@ a:focus-visible {
   margin-left: 4px;
 }
 .unit-card__price-note {
-  font-size: 11.5px;
+  font-size: 12px;
   color: var(--ink-soft);
-  margin-top: 4px;
+  margin: -4px 0 0;
+  text-align: left;
 }
 
 /* Perks checklist */
@@ -3812,7 +3825,7 @@ a:focus-visible {
   opacity: 0.7;
 }
 
-/* Tablet & mobile — keep 2-col body (specs left, perks right) per mockup */
+/* Tablet & mobile */
 @media (max-width: 820px) {
   .units-trust-strip,
   .units-perks-strip {
@@ -3820,39 +3833,38 @@ a:focus-visible {
     gap: 14px;
   }
   .unit-card { padding: 20px 18px; }
-  .unit-card__body { grid-template-columns: 1.05fr 1fr; gap: 16px; }
-  .unit-card__br { font-size: 34px; }
-  .unit-card__price strong { font-size: 34px; }
+  .unit-card__br { font-size: 36px; }
+  .unit-card__price strong { font-size: 36px; }
 }
 @media (max-width: 720px) {
   .units-trust-strip__text strong,
   .units-perks-strip__text strong { font-size: 20px; }
   .units-trust-strip__text span,
   .units-perks-strip__text span { font-size: 17px; }
-  .unit-card__body { gap: 14px; }
-  .unit-card__perks { gap: 9px; }
-  .unit-card__perks li { font-size: 16px; line-height: 1.35; }
-  .unit-card__perks li svg { width: 18px; height: 18px; }
-  .unit-card__perks-note { font-size: 15px; }
-  .unit-card__head { gap: 10px; }
-  .unit-card__br { font-size: 36px; }
+  .unit-card__header { gap: 14px; }
+  .unit-card__title { gap: 12px; }
+  .unit-card__br { font-size: 40px; }
   .unit-card__name strong { font-size: 19px; }
   .unit-card__name span { font-size: 16px; }
   .unit-card__price-label { font-size: 17px; }
-  .unit-card__price strong { font-size: 36px; }
+  .unit-card__price strong { font-size: 40px; }
   .unit-card__price small { font-size: 19px; }
   .unit-card__price-note { font-size: 14px; }
+  .unit-card__perks { gap: 10px; }
+  .unit-card__perks li { font-size: 17px; line-height: 1.35; }
+  .unit-card__perks li svg { width: 20px; height: 20px; }
+  .unit-card__perks-note { font-size: 15px; }
   .unit-card__cta,
   .unit-card__plan-btn { font-size: 19px; padding: 16px 22px; }
 }
 @media (max-width: 420px) {
   .unit-card { padding: 18px 14px; }
-  .unit-card__body { grid-template-columns: 1fr 0.95fr; gap: 10px; }
-  .unit-card__br { font-size: 32px; }
+  .unit-card__header { gap: 10px; }
+  .unit-card__br { font-size: 34px; }
   .unit-card__name strong { font-size: 17px; }
   .unit-card__name span { font-size: 14px; }
-  .unit-card__price strong { font-size: 32px; }
+  .unit-card__price-label { font-size: 15px; }
+  .unit-card__price strong { font-size: 34px; }
   .unit-card__price small { font-size: 17px; }
-  .unit-card__perks li { font-size: 15px; gap: 7px; }
-  .unit-card__perks li svg { width: 16px; height: 16px; }
+  .unit-card__perks li { font-size: 15.5px; }
 }
