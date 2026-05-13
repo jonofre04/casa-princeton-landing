@@ -2669,6 +2669,11 @@ a:focus-visible {
   padding: 80px 24px;
   background: var(--paper);
 }
+@media (max-width: 720px) {
+  .community-section { padding: 28px 18px 36px; }
+  .community-section h2 { margin-bottom: 8px; font-size: clamp(26px, 6vw, 32px); }
+  .community-section__sub { margin-bottom: 18px; font-size: 15px; }
+}
 .community-section__inner {
   max-width: 1120px;
   margin: 0 auto;
