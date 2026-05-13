@@ -2670,9 +2670,10 @@ a:focus-visible {
   background: var(--paper);
 }
 @media (max-width: 720px) {
-  .community-section { padding: 28px 18px 36px; }
-  .community-section h2 { margin-bottom: 8px; font-size: clamp(26px, 6vw, 32px); }
-  .community-section__sub { margin-bottom: 18px; font-size: 15px; }
+  .community-section { padding: 16px 18px 18px; }
+  .community-section h2 { margin-bottom: 6px; font-size: clamp(24px, 5.5vw, 30px); }
+  .community-section__sub { margin-bottom: 14px; font-size: 14.5px; }
+  .community-section__figure figcaption { margin-top: 8px; }
 }
 .community-section__inner {
   max-width: 1120px;
@@ -2742,7 +2743,12 @@ a:focus-visible {
   box-shadow: 0 8px 28px rgba(15, 30, 51, 0.12);
   display: block;
 }
-@media (max-width: 720px) { .location-landing iframe { height: 320px; } }
+@media (max-width: 720px) {
+  .location-landing { padding: 22px 18px 28px; }
+  .location-landing h2 { font-size: clamp(24px, 5.5vw, 30px); margin-bottom: 10px; }
+  .location-landing > .location-landing__inner > p { font-size: 14.5px; margin-bottom: 16px; }
+  .location-landing iframe { height: 320px; }
+}
 
 /* Final CTA */
 .final-cta {
