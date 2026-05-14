@@ -3571,7 +3571,7 @@ a:focus-visible {
 /* Top trust strip */
 .units-trust-strip {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: auto minmax(0, 1fr) auto;
   gap: 10px;
   margin-bottom: 18px;
   padding: 12px 14px;
