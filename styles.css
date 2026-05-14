@@ -3866,45 +3866,50 @@ a:focus-visible {
 
 /* Tablet & mobile */
 @media (max-width: 720px) {
-  .unit-card { padding: 16px 18px; gap: 14px; }
+  .unit-card { padding: 16px 18px; gap: 12px; }
   .unit-card__header { gap: 14px; }
   .unit-card__title { gap: 12px; }
-  .unit-card__br { font-size: 36px; }
-  .unit-card__name strong { font-size: 17px; }
-  .unit-card__name span { font-size: 15px; }
-  .unit-card__price-label { font-size: 14px; }
-  .unit-card__price strong { font-size: 34px; }
-  .unit-card__price small { font-size: 16px; }
-  .unit-card__price-note { font-size: 13px; }
-  .unit-card__perks { gap: 9px 12px; }
-  .unit-card__perks li { font-size: 14.5px; line-height: 1.35; align-items: flex-start; }
-  .unit-card__perks li svg { width: 17px; height: 17px; margin-top: 1px; }
-  .unit-card__perks-note { font-size: 13px; }
-  .unit-card__cta { font-size: 17px; padding: 14px 22px; }
-  .unit-card__plan-btn { font-size: 16px; padding: 12px 22px; }
+  .unit-card__br { font-size: 40px; }
+  .unit-card__name strong { font-size: 19px; }
+  .unit-card__name span { font-size: 16.5px; }
+  .unit-card__price-label { font-size: 16px; }
+  .unit-card__price strong { font-size: 38px; }
+  .unit-card__price small { font-size: 18px; }
+  .unit-card__price-note { font-size: 14px; }
+  .unit-card__perks { gap: 8px 12px; }
+  .unit-card__perks li { font-size: 16.5px; line-height: 1.35; align-items: flex-start; }
+  .unit-card__perks li svg { width: 19px; height: 19px; margin-top: 1px; }
+  .unit-card__perks-note { font-size: 15px; }
+  .unit-card__cta { font-size: 19px; padding: 14px 22px; }
+  .unit-card__plan-btn { font-size: 18px; padding: 12px 22px; }
   /* Trust + perks strips stay 3-col but compress */
   .units-trust-strip { padding: 12px 12px; gap: 8px; margin-bottom: 14px; }
   .units-trust-strip__item { gap: 8px; }
-  .units-trust-strip__icon { width: 34px; height: 34px; }
-  .units-trust-strip__icon svg { width: 17px; height: 17px; }
-  .units-trust-strip__text strong { font-size: 13px; line-height: 1.2; }
-  .units-trust-strip__text span { font-size: 12px; }
+  .units-trust-strip__icon { width: 36px; height: 36px; }
+  .units-trust-strip__icon svg { width: 18px; height: 18px; }
+  .units-trust-strip__text strong { font-size: 14px; line-height: 1.2; }
+  .units-trust-strip__text span { font-size: 13px; }
   .units-perks-strip { padding: 12px 12px; gap: 8px; }
   .units-perks-strip__item { gap: 8px; }
-  .units-perks-strip__icon { width: 34px; height: 34px; }
-  .units-perks-strip__icon svg { width: 17px; height: 17px; }
-  .units-perks-strip__text strong { font-size: 13px; line-height: 1.2; }
-  .units-perks-strip__text span { font-size: 12px; }
+  .units-perks-strip__icon { width: 36px; height: 36px; }
+  .units-perks-strip__icon svg { width: 18px; height: 18px; }
+  .units-perks-strip__text strong { font-size: 14px; line-height: 1.2; }
+  .units-perks-strip__text span { font-size: 13px; }
 }
 @media (max-width: 420px) {
   .unit-card { padding: 14px 14px; }
   .unit-card__header { gap: 10px; }
-  .unit-card__br { font-size: 30px; }
-  .unit-card__name strong { font-size: 15.5px; }
-  .unit-card__name span { font-size: 13.5px; }
-  .unit-card__price strong { font-size: 28px; }
-  .unit-card__price small { font-size: 14px; }
-  .unit-card__perks { gap: 8px 10px; }
-  .unit-card__perks li { font-size: 13.5px; }
-  .unit-card__perks li svg { width: 16px; height: 16px; }
+  .unit-card__br { font-size: 34px; }
+  .unit-card__name strong { font-size: 17px; }
+  .unit-card__name span { font-size: 15px; }
+  .unit-card__price-label { font-size: 14.5px; }
+  .unit-card__price strong { font-size: 32px; }
+  .unit-card__price small { font-size: 16px; }
+  .unit-card__price-note { font-size: 13px; }
+  .unit-card__perks { gap: 7px 10px; }
+  .unit-card__perks li { font-size: 15px; }
+  .unit-card__perks li svg { width: 17px; height: 17px; }
+  .unit-card__perks-note { font-size: 13.5px; }
+  .unit-card__cta { font-size: 17px; padding: 12px 20px; }
+  .unit-card__plan-btn { font-size: 16px; padding: 10px 20px; }
 }
