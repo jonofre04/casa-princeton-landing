@@ -9,8 +9,8 @@ if (year) year.textContent = new Date().getFullYear();
 // ══════════════════════════════════════════════
 (function setupConcessionBanner() {
   // Versioned key — bump suffix when banner copy changes so users who dismissed
-  // the previous offer still see the new one. Current: 8 weeks free rent / May 31st.
-  const STORAGE_KEY = 'cp_concession_dismissed_v2';
+  // the previous offer still see the new one. Current: 8 weeks free rent / June 30th.
+  const STORAGE_KEY = 'cp_concession_dismissed_v3';
   const banner = document.getElementById('concessionBanner');
   if (!banner) return;
   let dismissed = false;
@@ -265,7 +265,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 const I18N_ES = {
   // Concession banner
   "8 weeks free rent": "8 semanas de renta gratis",
-  "— Lease by May 31st": "— Firma antes del 31 de mayo",
+  "— Lease by June 30th": "— Firma antes del 30 de junio",
   "Close offer banner": "Cerrar banner de oferta",
 
   // Header
@@ -286,7 +286,7 @@ const I18N_ES = {
   "— Now Leasing": "— Ahora alquilando",
   "1 BR from": "1 DOR desde",
   "2 BR from": "2 DOR desde",
-  "8 weeks free rent — Lease by May 31st. Tour by appointment — text us and we'll book you in 5 minutes.": "8 semanas de renta gratis — firma antes del 31 de mayo. Tour con cita previa — escríbenos y te agendamos en 5 minutos.",
+  "8 weeks free rent — Lease by June 30th. Tour by appointment — text us and we'll book you in 5 minutes.": "8 semanas de renta gratis — firma antes del 30 de junio. Tour con cita previa — escríbenos y te agendamos en 5 minutos.",
   "Book a Tour": "Agenda tu Tour",
   "/mo": "/mes",
 
@@ -422,7 +422,7 @@ const I18N_ES = {
   "Base rent covers your home. Trash service ($20), water & sewer ($55–85), and 1 GB fiber internet ($60) are billed monthly in addition. Pet rent applies if you have pets.": "La renta base cubre tu hogar. Servicio de basura ($20), agua y alcantarillado ($55–85), e internet de fibra 1 GB ($60) se facturan mensualmente además. La renta de mascota aplica si tienes mascotas.",
   "What lease terms are available?": "¿Qué plazos de contrato están disponibles?",
   "12-month leases qualify for our current": "Los contratos de 12 meses califican para nuestra promoción actual de",
-  "promotion (lease by May 31st). Other lease terms may be available — ask our leasing team.": "(firma antes del 31 de mayo). Otros plazos pueden estar disponibles — consulta a nuestro equipo de leasing.",
+  "promotion (lease by June 30th). Other lease terms may be available — ask our leasing team.": "(firma antes del 30 de junio). Otros plazos pueden estar disponibles — consulta a nuestro equipo de leasing.",
   "Is there an application fee?": "¿Hay cuota de aplicación?",
   "$49 per applicant covers credit, background, and identity verification, plus a $275 administrative fee per household.": "$49 por aplicante cubre verificación de crédito, antecedentes e identidad, más $275 de cuota administrativa por hogar.",
   "Are pets allowed?": "¿Se permiten mascotas?",
@@ -472,7 +472,7 @@ const I18N_ES = {
   // Final CTA
   "Ready to see it?": "¿Listo para verlo?",
   "Tour by appointment — usually same-day.": "Tour con cita previa — generalmente el mismo día.",
-  "8 weeks free rent — Lease by May 31st.": "8 semanas de renta gratis — firma antes del 31 de mayo.",
+  "8 weeks free rent — Lease by June 30th.": "8 semanas de renta gratis — firma antes del 30 de junio.",
 
   // Footer
   "Casa Princeton Apartments": "Casa Princeton Apartments",
