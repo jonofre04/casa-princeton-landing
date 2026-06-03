@@ -186,20 +186,33 @@ if (year) year.textContent = new Date().getFullYear();
 })();
 
 // ══════════════════════════════════════════════
-// Contact CTA tracking (GA4 + Meta Pixel)
-// All CTAs go to sms: directly — no iOS detection needed.
+// Contact CTA + engagement tracking (GA4 + Meta Pixel)
+// Differentiates between real contact intent (sms/tel) and
+// in-page engagement (anchor scrolls to unit cards) so that
+// Google Ads conversion tracking stays clean.
 // ══════════════════════════════════════════════
 document.addEventListener('click', (e) => {
   const link = e.target.closest('a[data-wa-source]');
   if (!link) return;
   const source = link.dataset.waSource || 'unknown';
-  const medium = link.protocol === 'tel:' ? 'tel' : 'sms';
+  const protocol = link.protocol;
+  const isContactIntent = protocol === 'sms:' || protocol === 'tel:' || protocol === 'mailto:';
   window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    event: 'click_contact',
-    source: source,
-    medium: medium
-  });
+
+  if (isContactIntent) {
+    const medium = protocol === 'tel:' ? 'tel' : (protocol === 'mailto:' ? 'email' : 'sms');
+    window.dataLayer.push({
+      event: 'click_contact',
+      source: source,
+      medium: medium
+    });
+  } else {
+    // In-page navigation (anchor scrolls) — engagement, not conversion.
+    window.dataLayer.push({
+      event: 'view_unit_card',
+      source: source
+    });
+  }
 });
 
 // ══════════════════════════════════════════════
