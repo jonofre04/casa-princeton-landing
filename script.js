@@ -592,11 +592,8 @@ const I18N_ES = {
     });
   }
 
-  // On load, apply stored preference (if any)
-  let saved = 'en';
-  try { saved = localStorage.getItem('cp_lang') || 'en'; } catch (_) {}
-  if (saved === 'es') {
-    window.applyLanguage('es');
-    setBtnLabel('es');
-  }
+  // No auto-apply from localStorage: language now switches via URL (/ vs /es/),
+  // not client-side. Cleanup any leftover preference from older versions so a
+  // previously-saved 'es' value doesn't translate the English page.
+  try { localStorage.removeItem('cp_lang'); } catch (_) {}
 })();
